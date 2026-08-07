@@ -1,3 +1,4 @@
+# src/audio/live_caption.py
 import pyaudio
 import numpy as np
 from faster_whisper import WhisperModel

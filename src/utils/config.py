@@ -55,4 +55,4 @@ class Config:
                 json.dump(config, f, ensure_ascii=False, indent=2)
             logger.info(f"配置已保存: {cls.CONFIG_FILE}")
         except Exception as e:
-            logger.error(f"保存配置失败: {e}")
+            logger.error(f"保存配置失败: {e}")          
