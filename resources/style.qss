@@ -1,0 +1,127 @@
+/* ===== 全局 ===== */
+QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #f5f7fa, stop:1 #e9edf2);
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+/* ===== 标签 ===== */
+QLabel {
+    color: #2c3e50;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ===== 按钮 ===== */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #5b9bd5, stop:1 #4a7db7);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #6aa8e0, stop:1 #5388c4);
+}
+QPushButton:pressed {
+    background: #3a6b9e;
+}
+QPushButton#screenBtn {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #6ab04c, stop:1 #4d8f35);
+}
+QPushButton#screenBtn:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #7ec45e, stop:1 #5ba03f);
+}
+QPushButton#docBtn {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #f39c12, stop:1 #d68910);
+}
+QPushButton#docBtn:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #f5b041, stop:1 #e0951a);
+}
+QPushButton#settingsBtn {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #95a5a6, stop:1 #7f8c8d);
+}
+QPushButton#settingsBtn:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #b0c0c1, stop:1 #95a5a6);
+}
+QPushButton#translateBtn {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #e74c3c, stop:1 #c0392b);
+    font-size: 15px;
+    padding: 10px 20px;
+}
+QPushButton#translateBtn:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #f05a4a, stop:1 #d44637);
+}
+
+/* ===== 组合框 ===== */
+QComboBox {
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 5px 10px;
+    min-height: 26px;
+    font-size: 13px;
+}
+QComboBox:hover {
+    border-color: #4A90D9;
+}
+QComboBox:on {
+    border-color: #4A90D9;
+}
+QComboBox::drop-down {
+    border: none;
+}
+QComboBox::down-arrow {
+    image: none; /* 使用自定义箭头，但这里用默认也可 */
+}
+QComboBox QAbstractItemView {
+    background: white;
+    border: 1px solid #bdc3c7;
+    selection-background-color: #4A90D9;
+    selection-color: white;
+}
+
+/* ===== 文本编辑框 ===== */
+QTextEdit {
+    background-color: white;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+QTextEdit:focus {
+    border-color: #4A90D9;
+    background-color: #fcfcfc;
+}
+
+/* ===== 底部翻译按钮特殊样式 ===== */
+QPushButton#translateBtn {
+    /* 上面已定义 */
+}
+
+/* ===== 系统托盘菜单（可选） ===== */
+QMenu {
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+QMenu::item {
+    padding: 6px 25px;
+}
+QMenu::item:selected {
+    background-color: #4A90D9;
+    color: white;
+}

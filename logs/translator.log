@@ -1,0 +1,344 @@
+2026-08-07 10:18:20.261 | INFO     | src.utils.config:save:56 - 配置已保存: C:\Users\schenghao\AppData\Roaming\GlobalTranslator\config.json
+2026-08-07 10:18:20.261 | INFO     | __main__:main:21 - 全局翻译工具启动
+2026-08-07 10:18:20.386 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 10:22:34.208 | INFO     | __main__:main:21 - 全局翻译工具启动
+2026-08-07 10:22:34.251 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 10:23:31.146 | INFO     | __main__:main:21 - 全局翻译工具启动
+2026-08-07 10:23:31.213 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 10:23:43.958 | INFO     | src.ocr.screen_ocr:extract_text:35 - OCR识别结果: HAN
+...
+2026-08-07 10:23:44.416 | INFO     | src.translator.engine:translate:35 - Google翻译成功: HAN... -> HE...
+2026-08-07 10:25:49.979 | INFO     | __main__:main:21 - 全局翻译工具启动
+2026-08-07 10:25:50.019 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 10:28:47.868 | INFO     | __main__:main:21 - 全局翻译工具启动
+2026-08-07 10:28:47.910 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 10:28:48.227 | INFO     | src.gui.main_window:setup_hotkeys:333 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 10:28:56.110 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=2
+2026-08-07 10:28:56.564 | INFO     | src.translator.engine:translate:35 - Google翻译成功: 你好... -> Hello...
+2026-08-07 10:28:56.565 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 5
+2026-08-07 10:29:14.429 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=3
+2026-08-07 10:29:15.432 | INFO     | src.translator.engine:translate:35 - Google翻译成功: 成功了... -> Successful...
+2026-08-07 10:29:15.433 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 10
+2026-08-07 10:29:36.087 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=DeepL, 源语言=auto, 目标语言=zh-CN, 文本长度=11
+2026-08-07 10:29:36.088 | ERROR    | src.gui.main_window:translate_text:180 - DeepL API Key 未配置
+2026-08-07 10:29:42.705 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=11
+2026-08-07 10:29:43.572 | INFO     | src.translator.engine:translate:35 - Google翻译成功: How are you... -> How are you...
+2026-08-07 10:29:43.573 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 11
+2026-08-07 10:29:50.736 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=11
+2026-08-07 10:29:51.348 | INFO     | src.translator.engine:translate:35 - Google翻译成功: How are you... -> How are you...
+2026-08-07 10:29:51.348 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 11
+2026-08-07 10:30:01.635 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=en, 目标语言=zh-CN, 文本长度=11
+2026-08-07 10:30:02.341 | INFO     | src.translator.engine:translate:35 - Google翻译成功: How are you... -> How are you...
+2026-08-07 10:30:02.342 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 11
+2026-08-07 10:30:34.139 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=en, 目标语言=zh-CN, 文本长度=9
+2026-08-07 10:30:35.086 | INFO     | src.translator.engine:translate:35 - Google翻译成功: 支持中问转义英文吗... -> Does it support escaping Chine...
+2026-08-07 10:30:35.086 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 54
+2026-08-07 10:30:47.924 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=en, 目标语言=zh-CN, 文本长度=8
+2026-08-07 10:30:48.288 | INFO     | src.translator.engine:translate:35 - Google翻译成功: 支持英文转中文吗... -> Does it support converting Eng...
+2026-08-07 10:30:48.288 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 46
+2026-08-07 10:30:52.762 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=en, 目标语言=zh-CN, 文本长度=8
+2026-08-07 10:30:53.124 | INFO     | src.translator.engine:translate:35 - Google翻译成功: 支持英文转中文吗... -> Does it support converting Eng...
+2026-08-07 10:30:53.126 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 46
+2026-08-07 10:31:05.336 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=en, 目标语言=zh-CN, 文本长度=5
+2026-08-07 10:31:05.742 | INFO     | src.translator.engine:translate:35 - Google翻译成功: hello... -> hello...
+2026-08-07 10:31:05.744 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 5
+2026-08-07 10:31:49.651 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=en, 目标语言=zh-CN, 文本长度=31
+2026-08-07 10:31:49.957 | INFO     | src.translator.engine:translate:35 - Google翻译成功: hello, I want English ,Chinses... -> hello, I want English ,Chinses...
+2026-08-07 10:31:49.959 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 31
+2026-08-07 10:32:37.198 | WARNING  | src.gui.main_window:translate_text:161 - 翻译请求：原文为空，已忽略
+2026-08-07 10:49:05.604 | INFO     | __main__:main:21 - 全局翻译工具启动
+2026-08-07 10:49:05.721 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 10:49:12.389 | INFO     | src.gui.main_window:setup_hotkeys:333 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 10:49:33.677 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=5
+2026-08-07 10:49:34.484 | INFO     | src.translator.engine:translate:38 - Google翻译成功: hello... -> hello...
+2026-08-07 10:49:34.485 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 5
+2026-08-07 10:49:49.548 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=6
+2026-08-07 10:49:49.784 | INFO     | src.translator.engine:translate:38 - Google翻译成功: Please... -> Please...
+2026-08-07 10:49:49.787 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 6
+2026-08-07 10:49:50.686 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=6
+2026-08-07 10:49:50.931 | INFO     | src.translator.engine:translate:38 - Google翻译成功: Please... -> Please...
+2026-08-07 10:49:50.931 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 6
+2026-08-07 10:50:02.492 | INFO     | src.gui.main_window:translate_text:168 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh-CN, 文本长度=7
+2026-08-07 10:50:03.666 | INFO     | src.translator.engine:translate:38 - Google翻译成功: 中文可以翻译吗... -> Can Chinese be translated?...
+2026-08-07 10:50:03.667 | INFO     | src.gui.main_window:on_translation_complete:210 - 翻译完成，结果长度: 26
+2026-08-07 11:42:30.417 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 11:42:30.551 | INFO     | src.gui.main_window:setup_hotkeys:294 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 11:42:30.799 | INFO     | __main__:finish:189 - 程序启动完成
+2026-08-07 11:42:38.911 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 11:42:38.985 | ERROR    | src.gui.main_window:translate_text:171 - 创建翻译引擎失败: en --> No support for the provided language.
+Please select on of the supported languages:
+{'acehnese': 'ace-ID', 'afrikaans': 'af-ZA', 'akan': 'ak-GH', 'albanian': 'sq-AL', 'amharic': 'am-ET', 'antigua and barbuda creole english': 'aig-AG', 'arabic': 'ar-SA', 'arabic egyptian': 'ar-EG', 'aragonese': 'an-ES', 'armenian': 'hy-AM', 'assamese': 'as-IN', 'asturian': 'ast-ES', 'austrian german': 'de-AT', 'awadhi': 'awa-IN', 'ayacucho quechua': 'quy-PE', 'azerbaijani': 'az-AZ', 'bahamas creole english': 'bah-BS', 'bajan': 'bjs-BB', 'balinese': 'ban-ID', 'balkan gipsy': 'rm-RO', 'bambara': 'bm-ML', 'banjar': 'bjn-ID', 'bashkir': 'ba-RU', 'basque': 'eu-ES', 'belarusian': 'be-BY', 'belgian french': 'fr-BE', 'bemba': 'bem-ZM', 'bengali': 'bn-IN', 'bhojpuri': 'bho-IN', 'bihari': 'bh-IN', 'bislama': 'bi-VU', 'borana': 'gax-KE', 'bosnian': 'bs-BA', 'bosnian (cyrillic)': 'bs-Cyrl-BA', 'breton': 'br-FR', 'buginese': 'bug-ID', 'bulgarian': 'bg-BG', 'burmese': 'my-MM', 'catalan': 'ca-ES', 'catalan valencian': 'cav-ES', 'cebuano': 'ceb-PH', 'central atlas tamazight': 'tzm-MA', 'central aymara': 'ayr-BO', 'central kanuri (latin script)': 'knc-NG', 'chadian arabic': 'shu-TD', 'chamorro': 'ch-GU', 'cherokee': 'chr-US', 'chhattisgarhi': 'hne-IN', 'chinese simplified': 'zh-CN', 'chinese trad. (hong kong)': 'zh-HK', 'chinese traditional': 'zh-TW', 'chinese traditional macau': 'zh-MO', 'chittagonian': 'ctg-BD', 'chokwe': 'cjk-AO', 'classical greek': 'grc-GR', 'comorian ngazidja': 'zdj-KM', 'coptic': 'cop-EG', 'crimean tatar': 'crh-RU', 'crioulo upper guinea': 'pov-GW', 'croatian': 'hr-HR', 'czech': 'cs-CZ', 'danish': 'da-DK', 'dari': 'prs-AF', 'dimli': 'diq-TR', 'dutch': 'nl-NL', 'dyula': 'dyu-CI', 'dzongkha': 'dz-BT', 'eastern yiddish': 'ydd-US', 'emakhuwa': 'vmw-MZ', 'english': 'en-GB', 'english australia': 'en-AU', 'english canada': 'en-CA', 'english india': 'en-IN', 'english ireland': 'en-IE', 'english new zealand': 'en-NZ', 'english singapore': 'en-SG', 'english south africa': 'en-ZA', 'english us': 'en-US', 'esperanto': 'eo-EU', 'estonian': 'et-EE', 'ewe': 'ee-GH', 'fanagalo': 'fn-FNG', 'faroese': 'fo-FO', 'fijian': 'fj-FJ', 'filipino': 'fil-PH', 'finnish': 'fi-FI', 'flemish': 'nl-BE', 'fon': 'fon-BJ', 'french': 'fr-FR', 'french canada': 'fr-CA', 'french swiss': 'fr-CH', 'friulian': 'fur-IT', 'fula': 'ff-FUL', 'galician': 'gl-ES', 'gamargu': 'mfi-NG', 'garo': 'grt-IN', 'georgian': 'ka-GE', 'german': 'de-DE', 'gilbertese': 'gil-KI', 'glavda': 'glw-NG', 'greek': 'el-GR', 'grenadian creole english': 'gcl-GD', 'guarani': 'gn-PY', 'gujarati': 'gu-IN', 'guyanese creole english': 'gyn-GY', 'haitian creole french': 'ht-HT', 'halh mongolian': 'khk-MN', 'hausa': 'ha-NE', 'hawaiian': 'haw-US', 'hebrew': 'he-IL', 'higi': 'hig-NG', 'hiligaynon': 'hil-PH', 'hill mari': 'mrj-RU', 'hindi': 'hi-IN', 'hmong': 'hmn-CN', 'hungarian': 'hu-HU', 'icelandic': 'is-IS', 'igbo ibo': 'ibo-NG', 'igbo ig': 'ig-NG', 'ilocano': 'ilo-PH', 'indonesian': 'id-ID', 'inuktitut greenlandic': 'kl-GL', 'irish gaelic': 'ga-IE', 'italian': 'it-IT', 'italian swiss': 'it-CH', 'jamaican creole english': 'jam-JM', 'japanese': 'ja-JP', 'javanese': 'jv-ID', 'jingpho': 'kac-MM', "k'iche'": 'quc-GT', 'kabiyè': 'kbp-TG', 'kabuverdianu': 'kea-CV', 'kabylian': 'kab-DZ', 'kalenjin': 'kln-KE', 'kamba': 'kam-KE', 'kannada': 'kn-IN', 'kanuri': 'kr-KAU', 'karen': 'kar-MM', 'kashmiri (devanagari script)': 'ks-IN', 'kashmiri (arabic script)': 'kas-IN', 'kazakh': 'kk-KZ', 'khasi': 'kha-IN', 'khmer': 'km-KH', 'kikuyu kik': 'kik-KE', 'kikuyu ki': 'ki-KE', 'kimbundu': 'kmb-AO', 'kinyarwanda': 'rw-RW', 'kirundi': 'rn-BI', 'kisii': 'guz-KE', 'kongo': 'kg-CG', 'konkani': 'kok-IN', 'korean': 'ko-KR', 'northern kurdish': 'kmr-TR', 'kurdish sorani': 'ckb-IQ', 'kyrgyz': 'ky-KG', 'lao': 'lo-LA', 'latgalian': 'ltg-LV', 'latin': 'la-XN', 'latvian': 'lv-LV', 'ligurian': 'lij-IT', 'limburgish': 'li-NL', 'lingala': 'ln-LIN', 'lithuanian': 'lt-LT', 'lombard': 'lmo-IT', 'luba-kasai': 'lua-CD', 'luganda': 'lg-UG', 'luhya': 'luy-KE', 'luo': 'luo-KE', 'luxembourgish': 'lb-LU', 'maa': 'mas-KE', 'macedonian': 'mk-MK', 'magahi': 'mag-IN', 'maithili': 'mai-IN', 'malagasy': 'mg-MG', 'malay': 'ms-MY', 'malayalam': 'ml-IN', 'maldivian': 'dv-MV', 'maltese': 'mt-MT', 'mandara': 'mfi-CM', 'manipuri': 'mni-IN', 'manx gaelic': 'gv-IM', 'maori': 'mi-NZ', 'marathi': 'mr-IN', 'margi': 'mrt-NG', 'mari': 'mhr-RU', 'marshallese': 'mh-MH', 'mende': 'men-SL', 'meru': 'mer-KE', 'mijikenda': 'nyf-KE', 'minangkabau': 'min-ID', 'mizo': 'lus-IN', 'mongolian': 'mn-MN', 'montenegrin': 'sr-ME', 'morisyen': 'mfe-MU', 'moroccan arabic': 'ar-MA', 'mossi': 'mos-BF', 'ndau': 'ndc-MZ', 'ndebele': 'nr-ZA', 'nepali': 'ne-NP', 'nigerian fulfulde': 'fuv-NG', 'niuean': 'niu-NU', 'north azerbaijani': 'azj-AZ', 'sesotho': 'nso-ZA', 'northern uzbek': 'uzn-UZ', 'norwegian bokmål': 'nb-NO', 'norwegian nynorsk': 'nn-NO', 'nuer': 'nus-SS', 'nyanja': 'ny-MW', 'occitan': 'oc-FR', 'occitan aran': 'oc-ES', 'odia': 'or-IN', 'oriya': 'ory-IN', 'urdu': 'ur-PK', 'palauan': 'pau-PW', 'pali': 'pi-IN', 'pangasinan': 'pag-PH', 'papiamentu': 'pap-CW', 'pashto': 'ps-PK', 'persian': 'fa-IR', 'pijin': 'pis-SB', 'plateau malagasy': 'plt-MG', 'polish': 'pl-PL', 'portuguese': 'pt-PT', 'portuguese brazil': 'pt-BR', 'potawatomi': 'pot-US', 'punjabi': 'pa-IN', 'punjabi (pakistan)': 'pnb-PK', 'quechua': 'qu-PE', 'rohingya': 'rhg-MM', 'rohingyalish': 'rhl-MM', 'romanian': 'ro-RO', 'romansh': 'roh-CH', 'rundi': 'run-BI', 'russian': 'ru-RU', 'saint lucian creole french': 'acf-LC', 'samoan': 'sm-WS', 'sango': 'sg-CF', 'sanskrit': 'sa-IN', 'santali': 'sat-IN', 'sardinian': 'sc-IT', 'scots gaelic': 'gd-GB', 'sena': 'seh-ZW', 'serbian cyrillic': 'sr-Cyrl-RS', 'serbian latin': 'sr-Latn-RS', 'seselwa creole french': 'crs-SC', 'setswana (south africa)': 'tn-ZA', 'shan': 'shn-MM', 'shona': 'sn-ZW', 'sicilian': 'scn-IT', 'silesian': 'szl-PL', 'sindhi snd': 'snd-PK', 'sindhi sd': 'sd-PK', 'sinhala': 'si-LK', 'slovak': 'sk-SK', 'slovenian': 'sl-SI', 'somali': 'so-SO', 'sotho southern': 'st-LS', 'south azerbaijani': 'azb-AZ', 'southern pashto': 'pbt-PK', 'southwestern dinka': 'dik-SS', 'spanish': 'es-ES', 'spanish argentina': 'es-AR', 'spanish colombia': 'es-CO', 'spanish latin america': 'es-419', 'spanish mexico': 'es-MX', 'spanish united states': 'es-US', 'sranan tongo': 'srn-SR', 'standard latvian': 'lvs-LV', 'standard malay': 'zsm-MY', 'sundanese': 'su-ID', 'swahili': 'sw-KE', 'swati': 'ss-SZ', 'swedish': 'sv-SE', 'swiss german': 'de-CH', 'syriac (aramaic)': 'syc-TR', 'tagalog': 'tl-PH', 'tahitian': 'ty-PF', 'tajik': 'tg-TJ', 'tamashek (tuareg)': 'tmh-DZ', 'tamasheq': 'taq-ML', 'tamil india': 'ta-IN', 'tamil sri lanka': 'ta-LK', 'taroko': 'trv-TW', 'tatar': 'tt-RU', 'telugu': 'te-IN', 'tetum': 'tet-TL', 'thai': 'th-TH', 'tibetan': 'bo-CN', 'tigrinya': 'ti-ET', 'tok pisin': 'tpi-PG', 'tokelauan': 'tkl-TK', 'tongan': 'to-TO', 'tosk albanian': 'als-AL', 'tsonga': 'ts-ZA', 'tswa': 'tsc-MZ', 'tswana': 'tn-BW', 'tumbuka': 'tum-MW', 'turkish': 'tr-TR', 'turkmen': 'tk-TM', 'tuvaluan': 'tvl-TV', 'twi': 'tw-GH', 'udmurt': 'udm-RU', 'ukrainian': 'uk-UA', 'uma': 'ppk-ID', 'umbundu': 'umb-AO', 'uyghur uig': 'uig-CN', 'uyghur ug': 'ug-CN', 'uzbek': 'uz-UZ', 'venetian': 'vec-IT', 'vietnamese': 'vi-VN', 'vincentian creole english': 'svc-VC', 'virgin islands creole english': 'vic-US', 'wallisian': 'wls-WF', 'waray (philippines)': 'war-PH', 'welsh': 'cy-GB', 'west central oromo': 'gaz-ET', 'western persian': 'pes-IR', 'wolof': 'wo-SN', 'xhosa': 'xh-ZA', 'yiddish': 'yi-YD', 'yoruba': 'yo-NG', 'zulu': 'zu-ZA'}
+2026-08-07 11:42:40.007 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 11:42:40.008 | ERROR    | src.gui.main_window:translate_text:171 - 创建翻译引擎失败: en --> No support for the provided language.
+Please select on of the supported languages:
+{'acehnese': 'ace-ID', 'afrikaans': 'af-ZA', 'akan': 'ak-GH', 'albanian': 'sq-AL', 'amharic': 'am-ET', 'antigua and barbuda creole english': 'aig-AG', 'arabic': 'ar-SA', 'arabic egyptian': 'ar-EG', 'aragonese': 'an-ES', 'armenian': 'hy-AM', 'assamese': 'as-IN', 'asturian': 'ast-ES', 'austrian german': 'de-AT', 'awadhi': 'awa-IN', 'ayacucho quechua': 'quy-PE', 'azerbaijani': 'az-AZ', 'bahamas creole english': 'bah-BS', 'bajan': 'bjs-BB', 'balinese': 'ban-ID', 'balkan gipsy': 'rm-RO', 'bambara': 'bm-ML', 'banjar': 'bjn-ID', 'bashkir': 'ba-RU', 'basque': 'eu-ES', 'belarusian': 'be-BY', 'belgian french': 'fr-BE', 'bemba': 'bem-ZM', 'bengali': 'bn-IN', 'bhojpuri': 'bho-IN', 'bihari': 'bh-IN', 'bislama': 'bi-VU', 'borana': 'gax-KE', 'bosnian': 'bs-BA', 'bosnian (cyrillic)': 'bs-Cyrl-BA', 'breton': 'br-FR', 'buginese': 'bug-ID', 'bulgarian': 'bg-BG', 'burmese': 'my-MM', 'catalan': 'ca-ES', 'catalan valencian': 'cav-ES', 'cebuano': 'ceb-PH', 'central atlas tamazight': 'tzm-MA', 'central aymara': 'ayr-BO', 'central kanuri (latin script)': 'knc-NG', 'chadian arabic': 'shu-TD', 'chamorro': 'ch-GU', 'cherokee': 'chr-US', 'chhattisgarhi': 'hne-IN', 'chinese simplified': 'zh-CN', 'chinese trad. (hong kong)': 'zh-HK', 'chinese traditional': 'zh-TW', 'chinese traditional macau': 'zh-MO', 'chittagonian': 'ctg-BD', 'chokwe': 'cjk-AO', 'classical greek': 'grc-GR', 'comorian ngazidja': 'zdj-KM', 'coptic': 'cop-EG', 'crimean tatar': 'crh-RU', 'crioulo upper guinea': 'pov-GW', 'croatian': 'hr-HR', 'czech': 'cs-CZ', 'danish': 'da-DK', 'dari': 'prs-AF', 'dimli': 'diq-TR', 'dutch': 'nl-NL', 'dyula': 'dyu-CI', 'dzongkha': 'dz-BT', 'eastern yiddish': 'ydd-US', 'emakhuwa': 'vmw-MZ', 'english': 'en-GB', 'english australia': 'en-AU', 'english canada': 'en-CA', 'english india': 'en-IN', 'english ireland': 'en-IE', 'english new zealand': 'en-NZ', 'english singapore': 'en-SG', 'english south africa': 'en-ZA', 'english us': 'en-US', 'esperanto': 'eo-EU', 'estonian': 'et-EE', 'ewe': 'ee-GH', 'fanagalo': 'fn-FNG', 'faroese': 'fo-FO', 'fijian': 'fj-FJ', 'filipino': 'fil-PH', 'finnish': 'fi-FI', 'flemish': 'nl-BE', 'fon': 'fon-BJ', 'french': 'fr-FR', 'french canada': 'fr-CA', 'french swiss': 'fr-CH', 'friulian': 'fur-IT', 'fula': 'ff-FUL', 'galician': 'gl-ES', 'gamargu': 'mfi-NG', 'garo': 'grt-IN', 'georgian': 'ka-GE', 'german': 'de-DE', 'gilbertese': 'gil-KI', 'glavda': 'glw-NG', 'greek': 'el-GR', 'grenadian creole english': 'gcl-GD', 'guarani': 'gn-PY', 'gujarati': 'gu-IN', 'guyanese creole english': 'gyn-GY', 'haitian creole french': 'ht-HT', 'halh mongolian': 'khk-MN', 'hausa': 'ha-NE', 'hawaiian': 'haw-US', 'hebrew': 'he-IL', 'higi': 'hig-NG', 'hiligaynon': 'hil-PH', 'hill mari': 'mrj-RU', 'hindi': 'hi-IN', 'hmong': 'hmn-CN', 'hungarian': 'hu-HU', 'icelandic': 'is-IS', 'igbo ibo': 'ibo-NG', 'igbo ig': 'ig-NG', 'ilocano': 'ilo-PH', 'indonesian': 'id-ID', 'inuktitut greenlandic': 'kl-GL', 'irish gaelic': 'ga-IE', 'italian': 'it-IT', 'italian swiss': 'it-CH', 'jamaican creole english': 'jam-JM', 'japanese': 'ja-JP', 'javanese': 'jv-ID', 'jingpho': 'kac-MM', "k'iche'": 'quc-GT', 'kabiyè': 'kbp-TG', 'kabuverdianu': 'kea-CV', 'kabylian': 'kab-DZ', 'kalenjin': 'kln-KE', 'kamba': 'kam-KE', 'kannada': 'kn-IN', 'kanuri': 'kr-KAU', 'karen': 'kar-MM', 'kashmiri (devanagari script)': 'ks-IN', 'kashmiri (arabic script)': 'kas-IN', 'kazakh': 'kk-KZ', 'khasi': 'kha-IN', 'khmer': 'km-KH', 'kikuyu kik': 'kik-KE', 'kikuyu ki': 'ki-KE', 'kimbundu': 'kmb-AO', 'kinyarwanda': 'rw-RW', 'kirundi': 'rn-BI', 'kisii': 'guz-KE', 'kongo': 'kg-CG', 'konkani': 'kok-IN', 'korean': 'ko-KR', 'northern kurdish': 'kmr-TR', 'kurdish sorani': 'ckb-IQ', 'kyrgyz': 'ky-KG', 'lao': 'lo-LA', 'latgalian': 'ltg-LV', 'latin': 'la-XN', 'latvian': 'lv-LV', 'ligurian': 'lij-IT', 'limburgish': 'li-NL', 'lingala': 'ln-LIN', 'lithuanian': 'lt-LT', 'lombard': 'lmo-IT', 'luba-kasai': 'lua-CD', 'luganda': 'lg-UG', 'luhya': 'luy-KE', 'luo': 'luo-KE', 'luxembourgish': 'lb-LU', 'maa': 'mas-KE', 'macedonian': 'mk-MK', 'magahi': 'mag-IN', 'maithili': 'mai-IN', 'malagasy': 'mg-MG', 'malay': 'ms-MY', 'malayalam': 'ml-IN', 'maldivian': 'dv-MV', 'maltese': 'mt-MT', 'mandara': 'mfi-CM', 'manipuri': 'mni-IN', 'manx gaelic': 'gv-IM', 'maori': 'mi-NZ', 'marathi': 'mr-IN', 'margi': 'mrt-NG', 'mari': 'mhr-RU', 'marshallese': 'mh-MH', 'mende': 'men-SL', 'meru': 'mer-KE', 'mijikenda': 'nyf-KE', 'minangkabau': 'min-ID', 'mizo': 'lus-IN', 'mongolian': 'mn-MN', 'montenegrin': 'sr-ME', 'morisyen': 'mfe-MU', 'moroccan arabic': 'ar-MA', 'mossi': 'mos-BF', 'ndau': 'ndc-MZ', 'ndebele': 'nr-ZA', 'nepali': 'ne-NP', 'nigerian fulfulde': 'fuv-NG', 'niuean': 'niu-NU', 'north azerbaijani': 'azj-AZ', 'sesotho': 'nso-ZA', 'northern uzbek': 'uzn-UZ', 'norwegian bokmål': 'nb-NO', 'norwegian nynorsk': 'nn-NO', 'nuer': 'nus-SS', 'nyanja': 'ny-MW', 'occitan': 'oc-FR', 'occitan aran': 'oc-ES', 'odia': 'or-IN', 'oriya': 'ory-IN', 'urdu': 'ur-PK', 'palauan': 'pau-PW', 'pali': 'pi-IN', 'pangasinan': 'pag-PH', 'papiamentu': 'pap-CW', 'pashto': 'ps-PK', 'persian': 'fa-IR', 'pijin': 'pis-SB', 'plateau malagasy': 'plt-MG', 'polish': 'pl-PL', 'portuguese': 'pt-PT', 'portuguese brazil': 'pt-BR', 'potawatomi': 'pot-US', 'punjabi': 'pa-IN', 'punjabi (pakistan)': 'pnb-PK', 'quechua': 'qu-PE', 'rohingya': 'rhg-MM', 'rohingyalish': 'rhl-MM', 'romanian': 'ro-RO', 'romansh': 'roh-CH', 'rundi': 'run-BI', 'russian': 'ru-RU', 'saint lucian creole french': 'acf-LC', 'samoan': 'sm-WS', 'sango': 'sg-CF', 'sanskrit': 'sa-IN', 'santali': 'sat-IN', 'sardinian': 'sc-IT', 'scots gaelic': 'gd-GB', 'sena': 'seh-ZW', 'serbian cyrillic': 'sr-Cyrl-RS', 'serbian latin': 'sr-Latn-RS', 'seselwa creole french': 'crs-SC', 'setswana (south africa)': 'tn-ZA', 'shan': 'shn-MM', 'shona': 'sn-ZW', 'sicilian': 'scn-IT', 'silesian': 'szl-PL', 'sindhi snd': 'snd-PK', 'sindhi sd': 'sd-PK', 'sinhala': 'si-LK', 'slovak': 'sk-SK', 'slovenian': 'sl-SI', 'somali': 'so-SO', 'sotho southern': 'st-LS', 'south azerbaijani': 'azb-AZ', 'southern pashto': 'pbt-PK', 'southwestern dinka': 'dik-SS', 'spanish': 'es-ES', 'spanish argentina': 'es-AR', 'spanish colombia': 'es-CO', 'spanish latin america': 'es-419', 'spanish mexico': 'es-MX', 'spanish united states': 'es-US', 'sranan tongo': 'srn-SR', 'standard latvian': 'lvs-LV', 'standard malay': 'zsm-MY', 'sundanese': 'su-ID', 'swahili': 'sw-KE', 'swati': 'ss-SZ', 'swedish': 'sv-SE', 'swiss german': 'de-CH', 'syriac (aramaic)': 'syc-TR', 'tagalog': 'tl-PH', 'tahitian': 'ty-PF', 'tajik': 'tg-TJ', 'tamashek (tuareg)': 'tmh-DZ', 'tamasheq': 'taq-ML', 'tamil india': 'ta-IN', 'tamil sri lanka': 'ta-LK', 'taroko': 'trv-TW', 'tatar': 'tt-RU', 'telugu': 'te-IN', 'tetum': 'tet-TL', 'thai': 'th-TH', 'tibetan': 'bo-CN', 'tigrinya': 'ti-ET', 'tok pisin': 'tpi-PG', 'tokelauan': 'tkl-TK', 'tongan': 'to-TO', 'tosk albanian': 'als-AL', 'tsonga': 'ts-ZA', 'tswa': 'tsc-MZ', 'tswana': 'tn-BW', 'tumbuka': 'tum-MW', 'turkish': 'tr-TR', 'turkmen': 'tk-TM', 'tuvaluan': 'tvl-TV', 'twi': 'tw-GH', 'udmurt': 'udm-RU', 'ukrainian': 'uk-UA', 'uma': 'ppk-ID', 'umbundu': 'umb-AO', 'uyghur uig': 'uig-CN', 'uyghur ug': 'ug-CN', 'uzbek': 'uz-UZ', 'venetian': 'vec-IT', 'vietnamese': 'vi-VN', 'vincentian creole english': 'svc-VC', 'virgin islands creole english': 'vic-US', 'wallisian': 'wls-WF', 'waray (philippines)': 'war-PH', 'welsh': 'cy-GB', 'west central oromo': 'gaz-ET', 'western persian': 'pes-IR', 'wolof': 'wo-SN', 'xhosa': 'xh-ZA', 'yiddish': 'yi-YD', 'yoruba': 'yo-NG', 'zulu': 'zu-ZA'}
+2026-08-07 11:42:40.177 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 11:42:40.178 | ERROR    | src.gui.main_window:translate_text:171 - 创建翻译引擎失败: en --> No support for the provided language.
+Please select on of the supported languages:
+{'acehnese': 'ace-ID', 'afrikaans': 'af-ZA', 'akan': 'ak-GH', 'albanian': 'sq-AL', 'amharic': 'am-ET', 'antigua and barbuda creole english': 'aig-AG', 'arabic': 'ar-SA', 'arabic egyptian': 'ar-EG', 'aragonese': 'an-ES', 'armenian': 'hy-AM', 'assamese': 'as-IN', 'asturian': 'ast-ES', 'austrian german': 'de-AT', 'awadhi': 'awa-IN', 'ayacucho quechua': 'quy-PE', 'azerbaijani': 'az-AZ', 'bahamas creole english': 'bah-BS', 'bajan': 'bjs-BB', 'balinese': 'ban-ID', 'balkan gipsy': 'rm-RO', 'bambara': 'bm-ML', 'banjar': 'bjn-ID', 'bashkir': 'ba-RU', 'basque': 'eu-ES', 'belarusian': 'be-BY', 'belgian french': 'fr-BE', 'bemba': 'bem-ZM', 'bengali': 'bn-IN', 'bhojpuri': 'bho-IN', 'bihari': 'bh-IN', 'bislama': 'bi-VU', 'borana': 'gax-KE', 'bosnian': 'bs-BA', 'bosnian (cyrillic)': 'bs-Cyrl-BA', 'breton': 'br-FR', 'buginese': 'bug-ID', 'bulgarian': 'bg-BG', 'burmese': 'my-MM', 'catalan': 'ca-ES', 'catalan valencian': 'cav-ES', 'cebuano': 'ceb-PH', 'central atlas tamazight': 'tzm-MA', 'central aymara': 'ayr-BO', 'central kanuri (latin script)': 'knc-NG', 'chadian arabic': 'shu-TD', 'chamorro': 'ch-GU', 'cherokee': 'chr-US', 'chhattisgarhi': 'hne-IN', 'chinese simplified': 'zh-CN', 'chinese trad. (hong kong)': 'zh-HK', 'chinese traditional': 'zh-TW', 'chinese traditional macau': 'zh-MO', 'chittagonian': 'ctg-BD', 'chokwe': 'cjk-AO', 'classical greek': 'grc-GR', 'comorian ngazidja': 'zdj-KM', 'coptic': 'cop-EG', 'crimean tatar': 'crh-RU', 'crioulo upper guinea': 'pov-GW', 'croatian': 'hr-HR', 'czech': 'cs-CZ', 'danish': 'da-DK', 'dari': 'prs-AF', 'dimli': 'diq-TR', 'dutch': 'nl-NL', 'dyula': 'dyu-CI', 'dzongkha': 'dz-BT', 'eastern yiddish': 'ydd-US', 'emakhuwa': 'vmw-MZ', 'english': 'en-GB', 'english australia': 'en-AU', 'english canada': 'en-CA', 'english india': 'en-IN', 'english ireland': 'en-IE', 'english new zealand': 'en-NZ', 'english singapore': 'en-SG', 'english south africa': 'en-ZA', 'english us': 'en-US', 'esperanto': 'eo-EU', 'estonian': 'et-EE', 'ewe': 'ee-GH', 'fanagalo': 'fn-FNG', 'faroese': 'fo-FO', 'fijian': 'fj-FJ', 'filipino': 'fil-PH', 'finnish': 'fi-FI', 'flemish': 'nl-BE', 'fon': 'fon-BJ', 'french': 'fr-FR', 'french canada': 'fr-CA', 'french swiss': 'fr-CH', 'friulian': 'fur-IT', 'fula': 'ff-FUL', 'galician': 'gl-ES', 'gamargu': 'mfi-NG', 'garo': 'grt-IN', 'georgian': 'ka-GE', 'german': 'de-DE', 'gilbertese': 'gil-KI', 'glavda': 'glw-NG', 'greek': 'el-GR', 'grenadian creole english': 'gcl-GD', 'guarani': 'gn-PY', 'gujarati': 'gu-IN', 'guyanese creole english': 'gyn-GY', 'haitian creole french': 'ht-HT', 'halh mongolian': 'khk-MN', 'hausa': 'ha-NE', 'hawaiian': 'haw-US', 'hebrew': 'he-IL', 'higi': 'hig-NG', 'hiligaynon': 'hil-PH', 'hill mari': 'mrj-RU', 'hindi': 'hi-IN', 'hmong': 'hmn-CN', 'hungarian': 'hu-HU', 'icelandic': 'is-IS', 'igbo ibo': 'ibo-NG', 'igbo ig': 'ig-NG', 'ilocano': 'ilo-PH', 'indonesian': 'id-ID', 'inuktitut greenlandic': 'kl-GL', 'irish gaelic': 'ga-IE', 'italian': 'it-IT', 'italian swiss': 'it-CH', 'jamaican creole english': 'jam-JM', 'japanese': 'ja-JP', 'javanese': 'jv-ID', 'jingpho': 'kac-MM', "k'iche'": 'quc-GT', 'kabiyè': 'kbp-TG', 'kabuverdianu': 'kea-CV', 'kabylian': 'kab-DZ', 'kalenjin': 'kln-KE', 'kamba': 'kam-KE', 'kannada': 'kn-IN', 'kanuri': 'kr-KAU', 'karen': 'kar-MM', 'kashmiri (devanagari script)': 'ks-IN', 'kashmiri (arabic script)': 'kas-IN', 'kazakh': 'kk-KZ', 'khasi': 'kha-IN', 'khmer': 'km-KH', 'kikuyu kik': 'kik-KE', 'kikuyu ki': 'ki-KE', 'kimbundu': 'kmb-AO', 'kinyarwanda': 'rw-RW', 'kirundi': 'rn-BI', 'kisii': 'guz-KE', 'kongo': 'kg-CG', 'konkani': 'kok-IN', 'korean': 'ko-KR', 'northern kurdish': 'kmr-TR', 'kurdish sorani': 'ckb-IQ', 'kyrgyz': 'ky-KG', 'lao': 'lo-LA', 'latgalian': 'ltg-LV', 'latin': 'la-XN', 'latvian': 'lv-LV', 'ligurian': 'lij-IT', 'limburgish': 'li-NL', 'lingala': 'ln-LIN', 'lithuanian': 'lt-LT', 'lombard': 'lmo-IT', 'luba-kasai': 'lua-CD', 'luganda': 'lg-UG', 'luhya': 'luy-KE', 'luo': 'luo-KE', 'luxembourgish': 'lb-LU', 'maa': 'mas-KE', 'macedonian': 'mk-MK', 'magahi': 'mag-IN', 'maithili': 'mai-IN', 'malagasy': 'mg-MG', 'malay': 'ms-MY', 'malayalam': 'ml-IN', 'maldivian': 'dv-MV', 'maltese': 'mt-MT', 'mandara': 'mfi-CM', 'manipuri': 'mni-IN', 'manx gaelic': 'gv-IM', 'maori': 'mi-NZ', 'marathi': 'mr-IN', 'margi': 'mrt-NG', 'mari': 'mhr-RU', 'marshallese': 'mh-MH', 'mende': 'men-SL', 'meru': 'mer-KE', 'mijikenda': 'nyf-KE', 'minangkabau': 'min-ID', 'mizo': 'lus-IN', 'mongolian': 'mn-MN', 'montenegrin': 'sr-ME', 'morisyen': 'mfe-MU', 'moroccan arabic': 'ar-MA', 'mossi': 'mos-BF', 'ndau': 'ndc-MZ', 'ndebele': 'nr-ZA', 'nepali': 'ne-NP', 'nigerian fulfulde': 'fuv-NG', 'niuean': 'niu-NU', 'north azerbaijani': 'azj-AZ', 'sesotho': 'nso-ZA', 'northern uzbek': 'uzn-UZ', 'norwegian bokmål': 'nb-NO', 'norwegian nynorsk': 'nn-NO', 'nuer': 'nus-SS', 'nyanja': 'ny-MW', 'occitan': 'oc-FR', 'occitan aran': 'oc-ES', 'odia': 'or-IN', 'oriya': 'ory-IN', 'urdu': 'ur-PK', 'palauan': 'pau-PW', 'pali': 'pi-IN', 'pangasinan': 'pag-PH', 'papiamentu': 'pap-CW', 'pashto': 'ps-PK', 'persian': 'fa-IR', 'pijin': 'pis-SB', 'plateau malagasy': 'plt-MG', 'polish': 'pl-PL', 'portuguese': 'pt-PT', 'portuguese brazil': 'pt-BR', 'potawatomi': 'pot-US', 'punjabi': 'pa-IN', 'punjabi (pakistan)': 'pnb-PK', 'quechua': 'qu-PE', 'rohingya': 'rhg-MM', 'rohingyalish': 'rhl-MM', 'romanian': 'ro-RO', 'romansh': 'roh-CH', 'rundi': 'run-BI', 'russian': 'ru-RU', 'saint lucian creole french': 'acf-LC', 'samoan': 'sm-WS', 'sango': 'sg-CF', 'sanskrit': 'sa-IN', 'santali': 'sat-IN', 'sardinian': 'sc-IT', 'scots gaelic': 'gd-GB', 'sena': 'seh-ZW', 'serbian cyrillic': 'sr-Cyrl-RS', 'serbian latin': 'sr-Latn-RS', 'seselwa creole french': 'crs-SC', 'setswana (south africa)': 'tn-ZA', 'shan': 'shn-MM', 'shona': 'sn-ZW', 'sicilian': 'scn-IT', 'silesian': 'szl-PL', 'sindhi snd': 'snd-PK', 'sindhi sd': 'sd-PK', 'sinhala': 'si-LK', 'slovak': 'sk-SK', 'slovenian': 'sl-SI', 'somali': 'so-SO', 'sotho southern': 'st-LS', 'south azerbaijani': 'azb-AZ', 'southern pashto': 'pbt-PK', 'southwestern dinka': 'dik-SS', 'spanish': 'es-ES', 'spanish argentina': 'es-AR', 'spanish colombia': 'es-CO', 'spanish latin america': 'es-419', 'spanish mexico': 'es-MX', 'spanish united states': 'es-US', 'sranan tongo': 'srn-SR', 'standard latvian': 'lvs-LV', 'standard malay': 'zsm-MY', 'sundanese': 'su-ID', 'swahili': 'sw-KE', 'swati': 'ss-SZ', 'swedish': 'sv-SE', 'swiss german': 'de-CH', 'syriac (aramaic)': 'syc-TR', 'tagalog': 'tl-PH', 'tahitian': 'ty-PF', 'tajik': 'tg-TJ', 'tamashek (tuareg)': 'tmh-DZ', 'tamasheq': 'taq-ML', 'tamil india': 'ta-IN', 'tamil sri lanka': 'ta-LK', 'taroko': 'trv-TW', 'tatar': 'tt-RU', 'telugu': 'te-IN', 'tetum': 'tet-TL', 'thai': 'th-TH', 'tibetan': 'bo-CN', 'tigrinya': 'ti-ET', 'tok pisin': 'tpi-PG', 'tokelauan': 'tkl-TK', 'tongan': 'to-TO', 'tosk albanian': 'als-AL', 'tsonga': 'ts-ZA', 'tswa': 'tsc-MZ', 'tswana': 'tn-BW', 'tumbuka': 'tum-MW', 'turkish': 'tr-TR', 'turkmen': 'tk-TM', 'tuvaluan': 'tvl-TV', 'twi': 'tw-GH', 'udmurt': 'udm-RU', 'ukrainian': 'uk-UA', 'uma': 'ppk-ID', 'umbundu': 'umb-AO', 'uyghur uig': 'uig-CN', 'uyghur ug': 'ug-CN', 'uzbek': 'uz-UZ', 'venetian': 'vec-IT', 'vietnamese': 'vi-VN', 'vincentian creole english': 'svc-VC', 'virgin islands creole english': 'vic-US', 'wallisian': 'wls-WF', 'waray (philippines)': 'war-PH', 'welsh': 'cy-GB', 'west central oromo': 'gaz-ET', 'western persian': 'pes-IR', 'wolof': 'wo-SN', 'xhosa': 'xh-ZA', 'yiddish': 'yi-YD', 'yoruba': 'yo-NG', 'zulu': 'zu-ZA'}
+2026-08-07 11:42:40.352 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 11:42:40.353 | ERROR    | src.gui.main_window:translate_text:171 - 创建翻译引擎失败: en --> No support for the provided language.
+Please select on of the supported languages:
+{'acehnese': 'ace-ID', 'afrikaans': 'af-ZA', 'akan': 'ak-GH', 'albanian': 'sq-AL', 'amharic': 'am-ET', 'antigua and barbuda creole english': 'aig-AG', 'arabic': 'ar-SA', 'arabic egyptian': 'ar-EG', 'aragonese': 'an-ES', 'armenian': 'hy-AM', 'assamese': 'as-IN', 'asturian': 'ast-ES', 'austrian german': 'de-AT', 'awadhi': 'awa-IN', 'ayacucho quechua': 'quy-PE', 'azerbaijani': 'az-AZ', 'bahamas creole english': 'bah-BS', 'bajan': 'bjs-BB', 'balinese': 'ban-ID', 'balkan gipsy': 'rm-RO', 'bambara': 'bm-ML', 'banjar': 'bjn-ID', 'bashkir': 'ba-RU', 'basque': 'eu-ES', 'belarusian': 'be-BY', 'belgian french': 'fr-BE', 'bemba': 'bem-ZM', 'bengali': 'bn-IN', 'bhojpuri': 'bho-IN', 'bihari': 'bh-IN', 'bislama': 'bi-VU', 'borana': 'gax-KE', 'bosnian': 'bs-BA', 'bosnian (cyrillic)': 'bs-Cyrl-BA', 'breton': 'br-FR', 'buginese': 'bug-ID', 'bulgarian': 'bg-BG', 'burmese': 'my-MM', 'catalan': 'ca-ES', 'catalan valencian': 'cav-ES', 'cebuano': 'ceb-PH', 'central atlas tamazight': 'tzm-MA', 'central aymara': 'ayr-BO', 'central kanuri (latin script)': 'knc-NG', 'chadian arabic': 'shu-TD', 'chamorro': 'ch-GU', 'cherokee': 'chr-US', 'chhattisgarhi': 'hne-IN', 'chinese simplified': 'zh-CN', 'chinese trad. (hong kong)': 'zh-HK', 'chinese traditional': 'zh-TW', 'chinese traditional macau': 'zh-MO', 'chittagonian': 'ctg-BD', 'chokwe': 'cjk-AO', 'classical greek': 'grc-GR', 'comorian ngazidja': 'zdj-KM', 'coptic': 'cop-EG', 'crimean tatar': 'crh-RU', 'crioulo upper guinea': 'pov-GW', 'croatian': 'hr-HR', 'czech': 'cs-CZ', 'danish': 'da-DK', 'dari': 'prs-AF', 'dimli': 'diq-TR', 'dutch': 'nl-NL', 'dyula': 'dyu-CI', 'dzongkha': 'dz-BT', 'eastern yiddish': 'ydd-US', 'emakhuwa': 'vmw-MZ', 'english': 'en-GB', 'english australia': 'en-AU', 'english canada': 'en-CA', 'english india': 'en-IN', 'english ireland': 'en-IE', 'english new zealand': 'en-NZ', 'english singapore': 'en-SG', 'english south africa': 'en-ZA', 'english us': 'en-US', 'esperanto': 'eo-EU', 'estonian': 'et-EE', 'ewe': 'ee-GH', 'fanagalo': 'fn-FNG', 'faroese': 'fo-FO', 'fijian': 'fj-FJ', 'filipino': 'fil-PH', 'finnish': 'fi-FI', 'flemish': 'nl-BE', 'fon': 'fon-BJ', 'french': 'fr-FR', 'french canada': 'fr-CA', 'french swiss': 'fr-CH', 'friulian': 'fur-IT', 'fula': 'ff-FUL', 'galician': 'gl-ES', 'gamargu': 'mfi-NG', 'garo': 'grt-IN', 'georgian': 'ka-GE', 'german': 'de-DE', 'gilbertese': 'gil-KI', 'glavda': 'glw-NG', 'greek': 'el-GR', 'grenadian creole english': 'gcl-GD', 'guarani': 'gn-PY', 'gujarati': 'gu-IN', 'guyanese creole english': 'gyn-GY', 'haitian creole french': 'ht-HT', 'halh mongolian': 'khk-MN', 'hausa': 'ha-NE', 'hawaiian': 'haw-US', 'hebrew': 'he-IL', 'higi': 'hig-NG', 'hiligaynon': 'hil-PH', 'hill mari': 'mrj-RU', 'hindi': 'hi-IN', 'hmong': 'hmn-CN', 'hungarian': 'hu-HU', 'icelandic': 'is-IS', 'igbo ibo': 'ibo-NG', 'igbo ig': 'ig-NG', 'ilocano': 'ilo-PH', 'indonesian': 'id-ID', 'inuktitut greenlandic': 'kl-GL', 'irish gaelic': 'ga-IE', 'italian': 'it-IT', 'italian swiss': 'it-CH', 'jamaican creole english': 'jam-JM', 'japanese': 'ja-JP', 'javanese': 'jv-ID', 'jingpho': 'kac-MM', "k'iche'": 'quc-GT', 'kabiyè': 'kbp-TG', 'kabuverdianu': 'kea-CV', 'kabylian': 'kab-DZ', 'kalenjin': 'kln-KE', 'kamba': 'kam-KE', 'kannada': 'kn-IN', 'kanuri': 'kr-KAU', 'karen': 'kar-MM', 'kashmiri (devanagari script)': 'ks-IN', 'kashmiri (arabic script)': 'kas-IN', 'kazakh': 'kk-KZ', 'khasi': 'kha-IN', 'khmer': 'km-KH', 'kikuyu kik': 'kik-KE', 'kikuyu ki': 'ki-KE', 'kimbundu': 'kmb-AO', 'kinyarwanda': 'rw-RW', 'kirundi': 'rn-BI', 'kisii': 'guz-KE', 'kongo': 'kg-CG', 'konkani': 'kok-IN', 'korean': 'ko-KR', 'northern kurdish': 'kmr-TR', 'kurdish sorani': 'ckb-IQ', 'kyrgyz': 'ky-KG', 'lao': 'lo-LA', 'latgalian': 'ltg-LV', 'latin': 'la-XN', 'latvian': 'lv-LV', 'ligurian': 'lij-IT', 'limburgish': 'li-NL', 'lingala': 'ln-LIN', 'lithuanian': 'lt-LT', 'lombard': 'lmo-IT', 'luba-kasai': 'lua-CD', 'luganda': 'lg-UG', 'luhya': 'luy-KE', 'luo': 'luo-KE', 'luxembourgish': 'lb-LU', 'maa': 'mas-KE', 'macedonian': 'mk-MK', 'magahi': 'mag-IN', 'maithili': 'mai-IN', 'malagasy': 'mg-MG', 'malay': 'ms-MY', 'malayalam': 'ml-IN', 'maldivian': 'dv-MV', 'maltese': 'mt-MT', 'mandara': 'mfi-CM', 'manipuri': 'mni-IN', 'manx gaelic': 'gv-IM', 'maori': 'mi-NZ', 'marathi': 'mr-IN', 'margi': 'mrt-NG', 'mari': 'mhr-RU', 'marshallese': 'mh-MH', 'mende': 'men-SL', 'meru': 'mer-KE', 'mijikenda': 'nyf-KE', 'minangkabau': 'min-ID', 'mizo': 'lus-IN', 'mongolian': 'mn-MN', 'montenegrin': 'sr-ME', 'morisyen': 'mfe-MU', 'moroccan arabic': 'ar-MA', 'mossi': 'mos-BF', 'ndau': 'ndc-MZ', 'ndebele': 'nr-ZA', 'nepali': 'ne-NP', 'nigerian fulfulde': 'fuv-NG', 'niuean': 'niu-NU', 'north azerbaijani': 'azj-AZ', 'sesotho': 'nso-ZA', 'northern uzbek': 'uzn-UZ', 'norwegian bokmål': 'nb-NO', 'norwegian nynorsk': 'nn-NO', 'nuer': 'nus-SS', 'nyanja': 'ny-MW', 'occitan': 'oc-FR', 'occitan aran': 'oc-ES', 'odia': 'or-IN', 'oriya': 'ory-IN', 'urdu': 'ur-PK', 'palauan': 'pau-PW', 'pali': 'pi-IN', 'pangasinan': 'pag-PH', 'papiamentu': 'pap-CW', 'pashto': 'ps-PK', 'persian': 'fa-IR', 'pijin': 'pis-SB', 'plateau malagasy': 'plt-MG', 'polish': 'pl-PL', 'portuguese': 'pt-PT', 'portuguese brazil': 'pt-BR', 'potawatomi': 'pot-US', 'punjabi': 'pa-IN', 'punjabi (pakistan)': 'pnb-PK', 'quechua': 'qu-PE', 'rohingya': 'rhg-MM', 'rohingyalish': 'rhl-MM', 'romanian': 'ro-RO', 'romansh': 'roh-CH', 'rundi': 'run-BI', 'russian': 'ru-RU', 'saint lucian creole french': 'acf-LC', 'samoan': 'sm-WS', 'sango': 'sg-CF', 'sanskrit': 'sa-IN', 'santali': 'sat-IN', 'sardinian': 'sc-IT', 'scots gaelic': 'gd-GB', 'sena': 'seh-ZW', 'serbian cyrillic': 'sr-Cyrl-RS', 'serbian latin': 'sr-Latn-RS', 'seselwa creole french': 'crs-SC', 'setswana (south africa)': 'tn-ZA', 'shan': 'shn-MM', 'shona': 'sn-ZW', 'sicilian': 'scn-IT', 'silesian': 'szl-PL', 'sindhi snd': 'snd-PK', 'sindhi sd': 'sd-PK', 'sinhala': 'si-LK', 'slovak': 'sk-SK', 'slovenian': 'sl-SI', 'somali': 'so-SO', 'sotho southern': 'st-LS', 'south azerbaijani': 'azb-AZ', 'southern pashto': 'pbt-PK', 'southwestern dinka': 'dik-SS', 'spanish': 'es-ES', 'spanish argentina': 'es-AR', 'spanish colombia': 'es-CO', 'spanish latin america': 'es-419', 'spanish mexico': 'es-MX', 'spanish united states': 'es-US', 'sranan tongo': 'srn-SR', 'standard latvian': 'lvs-LV', 'standard malay': 'zsm-MY', 'sundanese': 'su-ID', 'swahili': 'sw-KE', 'swati': 'ss-SZ', 'swedish': 'sv-SE', 'swiss german': 'de-CH', 'syriac (aramaic)': 'syc-TR', 'tagalog': 'tl-PH', 'tahitian': 'ty-PF', 'tajik': 'tg-TJ', 'tamashek (tuareg)': 'tmh-DZ', 'tamasheq': 'taq-ML', 'tamil india': 'ta-IN', 'tamil sri lanka': 'ta-LK', 'taroko': 'trv-TW', 'tatar': 'tt-RU', 'telugu': 'te-IN', 'tetum': 'tet-TL', 'thai': 'th-TH', 'tibetan': 'bo-CN', 'tigrinya': 'ti-ET', 'tok pisin': 'tpi-PG', 'tokelauan': 'tkl-TK', 'tongan': 'to-TO', 'tosk albanian': 'als-AL', 'tsonga': 'ts-ZA', 'tswa': 'tsc-MZ', 'tswana': 'tn-BW', 'tumbuka': 'tum-MW', 'turkish': 'tr-TR', 'turkmen': 'tk-TM', 'tuvaluan': 'tvl-TV', 'twi': 'tw-GH', 'udmurt': 'udm-RU', 'ukrainian': 'uk-UA', 'uma': 'ppk-ID', 'umbundu': 'umb-AO', 'uyghur uig': 'uig-CN', 'uyghur ug': 'ug-CN', 'uzbek': 'uz-UZ', 'venetian': 'vec-IT', 'vietnamese': 'vi-VN', 'vincentian creole english': 'svc-VC', 'virgin islands creole english': 'vic-US', 'wallisian': 'wls-WF', 'waray (philippines)': 'war-PH', 'welsh': 'cy-GB', 'west central oromo': 'gaz-ET', 'western persian': 'pes-IR', 'wolof': 'wo-SN', 'xhosa': 'xh-ZA', 'yiddish': 'yi-YD', 'yoruba': 'yo-NG', 'zulu': 'zu-ZA'}
+2026-08-07 11:42:42.876 | INFO     | src.gui.main_window:closeEvent:324 - 全局热键已卸载
+2026-08-07 11:42:42.877 | INFO     | src.gui.main_window:closeEvent:351 - 程序已退出
+2026-08-07 11:45:04.910 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 11:45:05.046 | INFO     | src.gui.main_window:setup_hotkeys:294 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 11:45:05.302 | INFO     | __main__:finish:189 - 程序启动完成
+2026-08-07 11:45:12.524 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 11:45:13.283 | ERROR    | src.translator.engine:__init__:29 - googletrans 未安装，请运行: pip install googletrans==4.0.0-rc1
+2026-08-07 11:45:13.283 | ERROR    | src.gui.main_window:translate_text:171 - 创建翻译引擎失败: No module named 'cgi'
+2026-08-07 11:45:22.929 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 11:45:22.937 | ERROR    | src.translator.engine:__init__:29 - googletrans 未安装，请运行: pip install googletrans==4.0.0-rc1
+2026-08-07 11:45:22.937 | ERROR    | src.gui.main_window:translate_text:171 - 创建翻译引擎失败: No module named 'cgi'
+2026-08-07 11:45:25.403 | INFO     | src.gui.main_window:closeEvent:324 - 全局热键已卸载
+2026-08-07 11:45:25.403 | INFO     | src.gui.main_window:closeEvent:351 - 程序已退出
+2026-08-07 11:48:51.358 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 11:48:51.626 | INFO     | src.gui.main_window:setup_hotkeys:294 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 11:48:51.857 | INFO     | __main__:finish:189 - 程序启动完成
+2026-08-07 12:32:48.836 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 12:32:48.837 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:32:50.803 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: hello... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 12:32:50.804 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 164
+2026-08-07 12:32:52.926 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 12:32:52.926 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:32:53.750 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: hello... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 12:32:53.752 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 164
+2026-08-07 12:32:56.536 | INFO     | src.gui.main_window:closeEvent:324 - 全局热键已卸载
+2026-08-07 12:32:56.537 | INFO     | src.gui.main_window:closeEvent:351 - 程序已退出
+2026-08-07 12:36:01.415 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 12:36:01.620 | INFO     | src.gui.main_window:setup_hotkeys:294 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 12:36:01.855 | INFO     | __main__:finish:189 - 程序启动完成
+2026-08-07 12:36:25.581 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 12:36:25.582 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:36:27.060 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: hello... -> 你好...
+2026-08-07 12:36:27.062 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 2
+2026-08-07 12:36:40.035 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=11
+2026-08-07 12:36:40.036 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:36:41.022 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: how are you... -> 你好 , 我正在使用...
+2026-08-07 12:36:41.025 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 10
+2026-08-07 12:37:06.726 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=22
+2026-08-07 12:37:06.727 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:37:07.857 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: What are you doing now... -> 你正在做什么？...
+2026-08-07 12:37:07.859 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 7
+2026-08-07 12:37:17.551 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=4
+2026-08-07 12:37:17.553 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:37:18.564 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: good... -> 良好...
+2026-08-07 12:37:18.566 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 2
+2026-08-07 12:37:26.262 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:37:26.263 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:37:27.525 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你好... -> Greetings!...
+2026-08-07 12:37:27.528 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 10
+2026-08-07 12:37:36.372 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:37:36.372 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:37:37.503 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你好... -> Greetings!...
+2026-08-07 12:37:37.504 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 10
+2026-08-07 12:38:24.893 | INFO     | src.gui.main_window:closeEvent:324 - 全局热键已卸载
+2026-08-07 12:38:24.894 | INFO     | src.gui.main_window:closeEvent:351 - 程序已退出
+2026-08-07 12:44:42.620 | INFO     | __main__:main:169 - 正在启动全局翻译工具...
+2026-08-07 12:44:51.263 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 12:44:51.533 | INFO     | src.gui.main_window:setup_hotkeys:294 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 12:44:51.763 | INFO     | __main__:finish_loading:223 - 程序启动完成
+2026-08-07 12:45:40.133 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 12:45:40.134 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:45:41.463 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: hello... -> 你好...
+2026-08-07 12:45:41.464 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 2
+2026-08-07 12:47:33.209 | INFO     | src.gui.main_window:start_screen_translate:205 - 启动屏幕区域选择
+2026-08-07 12:47:37.670 | INFO     | src.gui.main_window:on_region_selected:211 - 屏幕区域已选: 456,134 513x153
+2026-08-07 12:47:38.083 | INFO     | src.ocr.screen_ocr:extract_text:35 - OCR识别结果: deepseek.com/a/chat/s/5c8fea29
+
+CO mom eBeanzet4tH7
+...
+2026-08-07 12:47:38.084 | INFO     | src.gui.main_window:on_region_selected:221 - OCR识别文本: deepseek.com/a/chat/s/5c8fea29
+
+CO mom eBeanzet4tH...
+2026-08-07 12:47:38.084 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=51
+2026-08-07 12:47:38.085 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:47:39.509 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: deepseek.com/a/chat/s/5c8fea29... -> deepseek.com/a/chat/s/5c8fea29...
+2026-08-07 12:47:39.513 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 51
+2026-08-07 12:48:06.084 | INFO     | src.gui.main_window:closeEvent:324 - 全局热键已卸载
+2026-08-07 12:48:06.087 | INFO     | src.gui.main_window:closeEvent:351 - 程序已退出
+2026-08-07 12:48:11.535 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 12:48:17.753 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 12:48:17.897 | INFO     | src.gui.main_window:setup_hotkeys:294 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 12:48:18.157 | INFO     | __main__:finish_loading:256 - 程序启动完成
+2026-08-07 12:48:24.103 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:48:24.104 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:48:25.117 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你好... -> Greetings!...
+2026-08-07 12:48:25.119 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 10
+2026-08-07 12:48:48.077 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=6
+2026-08-07 12:48:48.078 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:48:50.252 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你现在在干嘛... -> 你现在在干嘛...
+2026-08-07 12:48:50.255 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 6
+2026-08-07 12:48:55.488 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=en, 文本长度=6
+2026-08-07 12:48:55.488 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:48:56.308 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你现在在干嘛... -> PLEASE SELECT TWO DISTINCT LAN...
+2026-08-07 12:48:56.311 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 36
+2026-08-07 12:48:59.153 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=en, 文本长度=6
+2026-08-07 12:48:59.154 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:48:59.990 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你现在在干嘛... -> PLEASE SELECT TWO DISTINCT LAN...
+2026-08-07 12:48:59.991 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 36
+2026-08-07 12:49:06.599 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=en, 文本长度=2
+2026-08-07 12:49:06.600 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:07.409 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你好... -> PLEASE SELECT TWO DISTINCT LAN...
+2026-08-07 12:49:07.411 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 36
+2026-08-07 12:49:09.136 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=en, 文本长度=2
+2026-08-07 12:49:09.136 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:09.960 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你好... -> PLEASE SELECT TWO DISTINCT LAN...
+2026-08-07 12:49:09.965 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 36
+2026-08-07 12:49:11.945 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:49:11.945 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:13.029 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你好... -> Greetings!...
+2026-08-07 12:49:13.032 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 10
+2026-08-07 12:49:21.890 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=6
+2026-08-07 12:49:21.891 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:23.416 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 你现在在干嘛... -> 你现在在干嘛...
+2026-08-07 12:49:23.418 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 6
+2026-08-07 12:49:44.533 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=4
+2026-08-07 12:49:44.534 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:45.832 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 翻译英文... -> 翻译英文...
+2026-08-07 12:49:45.833 | INFO     | src.gui.main_window:on_translation_complete:188 - 翻译完成，结果长度: 4
+2026-08-07 12:49:56.957 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:49:56.957 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:57.829 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:49:57.830 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:58.013 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:49:58.014 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:58.871 | INFO     | src.gui.main_window:translate_text:153 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 12:49:58.871 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 12:49:58.931 | INFO     | src.translator.engine:translate:47 - MyMemory API翻译成功: 哈喽... -> 哈喽...
+2026-08-07 12:58:09.811 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:02:51.412 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:05:59.187 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:06:41.669 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:06:41.910 | INFO     | src.gui.main_window:setup_hotkeys:304 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:06:42.142 | INFO     | __main__:finish_loading:256 - 程序启动完成
+2026-08-07 13:07:00.374 | INFO     | src.gui.main_window:start_screen_translate:215 - 启动屏幕区域选择
+2026-08-07 13:07:02.322 | INFO     | src.gui.main_window:start_screen_translate:215 - 启动屏幕区域选择
+2026-08-07 13:07:57.095 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:08:03.123 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:08:03.349 | INFO     | src.gui.main_window:setup_hotkeys:304 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:08:03.597 | INFO     | __main__:finish_loading:256 - 程序启动完成
+2026-08-07 13:08:15.487 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:08:15.488 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:08:16.878 | INFO     | src.translator.engine:translate:62 - MyMemory API翻译成功: hello... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 13:08:16.882 | INFO     | src.gui.main_window:on_translation_complete:198 - 翻译完成，结果长度: 164
+2026-08-07 13:08:27.832 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:08:27.832 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:08:28.660 | INFO     | src.translator.engine:translate:62 - MyMemory API翻译成功: 你好... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 13:08:28.663 | INFO     | src.gui.main_window:on_translation_complete:198 - 翻译完成，结果长度: 164
+2026-08-07 13:08:31.934 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:08:31.934 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:08:32.747 | INFO     | src.translator.engine:translate:62 - MyMemory API翻译成功: 你好... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 13:08:32.750 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:08:32.750 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:08:32.753 | INFO     | src.gui.main_window:on_translation_complete:198 - 翻译完成，结果长度: 164
+2026-08-07 13:08:32.756 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:08:32.757 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:08:52.167 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:08:58.272 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:08:58.408 | INFO     | src.gui.main_window:setup_hotkeys:304 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:08:58.668 | INFO     | __main__:finish_loading:256 - 程序启动完成
+2026-08-07 13:09:05.355 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=DeepL, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:09:05.359 | ERROR    | src.gui.main_window:translate_text:171 - DeepL API Key 未配置
+2026-08-07 13:09:09.966 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:09:09.967 | INFO     | src.translator.engine:__init__:25 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:09:10.803 | INFO     | src.translator.engine:translate:62 - MyMemory API翻译成功: 你好... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 13:09:10.806 | INFO     | src.gui.main_window:on_translation_complete:198 - 翻译完成，结果长度: 164
+2026-08-07 13:13:23.846 | INFO     | src.gui.main_window:closeEvent:335 - 全局热键已卸载
+2026-08-07 13:13:23.849 | INFO     | src.gui.main_window:closeEvent:367 - 程序已退出
+2026-08-07 13:13:35.271 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:13:42.562 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:13:42.763 | INFO     | src.gui.main_window:setup_hotkeys:304 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:13:42.996 | INFO     | __main__:finish_loading:256 - 程序启动完成
+2026-08-07 13:13:49.259 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:13:49.260 | INFO     | src.translator.engine:__init__:26 - LibreTranslate 翻译引擎初始化成功
+2026-08-07 13:13:50.016 | WARNING  | src.translator.engine:translate:56 - LibreTranslate尝试 1/3 失败: 400 Client Error: Bad Request for url: https://libretranslate.com/translate
+2026-08-07 13:13:53.022 | WARNING  | src.translator.engine:translate:56 - LibreTranslate尝试 2/3 失败: 400 Client Error: Bad Request for url: https://libretranslate.com/translate
+2026-08-07 13:13:55.941 | WARNING  | src.translator.engine:translate:56 - LibreTranslate尝试 3/3 失败: 400 Client Error: Bad Request for url: https://libretranslate.com/translate
+2026-08-07 13:13:55.942 | ERROR    | src.translator.engine:translate:60 - LibreTranslate彻底失败: 400 Client Error: Bad Request for url: https://libretranslate.com/translate
+2026-08-07 13:13:55.943 | INFO     | src.gui.main_window:on_translation_complete:198 - 翻译完成，结果长度: 2
+2026-08-07 13:14:05.040 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=18
+2026-08-07 13:14:05.040 | INFO     | src.translator.engine:__init__:26 - LibreTranslate 翻译引擎初始化成功
+2026-08-07 13:14:05.939 | WARNING  | src.translator.engine:translate:56 - LibreTranslate尝试 1/3 失败: 400 Client Error: Bad Request for url: https://libretranslate.com/translate
+2026-08-07 13:14:08.122 | INFO     | src.gui.main_window:translate_text:162 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=18
+2026-08-07 13:14:08.123 | INFO     | src.translator.engine:__init__:26 - LibreTranslate 翻译引擎初始化成功
+2026-08-07 13:29:45.064 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:31:05.711 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:31:05.975 | INFO     | src.gui.main_window:setup_hotkeys:323 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:31:06.205 | INFO     | __main__:finish_loading:256 - 程序启动完成
+2026-08-07 13:31:20.140 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:31:20.141 | ERROR    | src.gui.main_window:translate_text:182 - 创建翻译引擎失败: 未找到 DeepSeek API Key，请在 .env 中设置 DEEPSEEK_API_KEY
+2026-08-07 13:31:53.012 | INFO     | src.gui.main_window:closeEvent:353 - 全局热键已卸载
+2026-08-07 13:31:53.013 | INFO     | src.gui.main_window:closeEvent:377 - 程序已退出
+2026-08-07 13:31:57.621 | INFO     | __main__:main:205 - 正在启动全局翻译工具...
+2026-08-07 13:32:05.711 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:32:05.907 | INFO     | src.gui.main_window:setup_hotkeys:323 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:32:06.181 | INFO     | __main__:finish_loading:256 - 程序启动完成
+2026-08-07 13:32:31.328 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:32:31.329 | ERROR    | src.gui.main_window:translate_text:182 - 创建翻译引擎失败: 未找到 DeepSeek API Key，请在 .env 中设置 DEEPSEEK_API_KEY
+2026-08-07 13:34:46.140 | INFO     | src.gui.main_window:closeEvent:353 - 全局热键已卸载
+2026-08-07 13:34:46.141 | INFO     | src.gui.main_window:closeEvent:377 - 程序已退出
+2026-08-07 13:38:16.266 | INFO     | __main__:main:208 - 正在启动全局翻译工具...
+2026-08-07 13:39:52.601 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:39:52.882 | INFO     | src.gui.main_window:setup_hotkeys:323 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:39:53.102 | INFO     | __main__:finish_loading:259 - 程序启动完成
+2026-08-07 13:40:01.270 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:40:02.135 | INFO     | src.translator.engine:__init__:79 - DeepSeek 翻译引擎初始化成功
+2026-08-07 13:40:08.865 | ERROR    | src.translator.engine:translate:105 - DeepSeek 翻译失败: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-08-07 13:40:08.868 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:40:08.876 | INFO     | src.translator.engine:__init__:79 - DeepSeek 翻译引擎初始化成功
+2026-08-07 13:40:08.882 | INFO     | src.gui.main_window:on_translation_complete:213 - 翻译完成，结果长度: 5
+2026-08-07 13:40:08.895 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:40:08.902 | INFO     | src.translator.engine:__init__:79 - DeepSeek 翻译引擎初始化成功
+2026-08-07 13:40:09.444 | ERROR    | src.translator.engine:translate:105 - DeepSeek 翻译失败: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-08-07 13:40:09.450 | ERROR    | src.translator.engine:translate:105 - DeepSeek 翻译失败: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-08-07 13:40:09.451 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:40:09.460 | INFO     | src.translator.engine:__init__:79 - DeepSeek 翻译引擎初始化成功
+2026-08-07 13:40:09.464 | INFO     | src.gui.main_window:on_translation_complete:213 - 翻译完成，结果长度: 5
+2026-08-07 13:40:09.466 | INFO     | src.gui.main_window:on_translation_complete:213 - 翻译完成，结果长度: 5
+2026-08-07 13:54:24.899 | INFO     | __main__:main:208 - 正在启动全局翻译工具...
+2026-08-07 13:54:32.564 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:54:32.701 | INFO     | src.gui.main_window:setup_hotkeys:322 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:54:32.963 | INFO     | __main__:finish_loading:259 - 程序启动完成
+2026-08-07 13:54:39.500 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:54:39.501 | INFO     | src.translator.engine:__init__:28 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:54:40.695 | INFO     | src.translator.engine:translate:54 - MyMemory 翻译成功: 你好... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 13:54:40.698 | INFO     | src.gui.main_window:on_translation_complete:212 - 翻译完成，结果长度: 164
+2026-08-07 13:54:45.683 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:54:45.776 | INFO     | src.translator.engine:__init__:79 - DeepSeek 翻译引擎初始化成功
+2026-08-07 13:54:47.346 | INFO     | src.translator.engine:translate:102 - DeepSeek 翻译成功: 你好... -> 你好...
+2026-08-07 13:54:47.347 | INFO     | src.gui.main_window:on_translation_complete:212 - 翻译完成，结果长度: 2
+2026-08-07 13:54:55.401 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:54:55.409 | INFO     | src.translator.engine:__init__:79 - DeepSeek 翻译引擎初始化成功
+2026-08-07 13:54:56.022 | INFO     | src.translator.engine:translate:102 - DeepSeek 翻译成功: hello... -> 你好...
+2026-08-07 13:54:56.023 | INFO     | src.gui.main_window:on_translation_complete:212 - 翻译完成，结果长度: 2
+2026-08-07 13:55:03.623 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=5
+2026-08-07 13:55:03.624 | INFO     | src.translator.engine:__init__:28 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:55:04.460 | INFO     | src.translator.engine:translate:54 - MyMemory 翻译成功: hello... -> 'AUTO' IS AN INVALID SOURCE LA...
+2026-08-07 13:55:04.463 | INFO     | src.gui.main_window:on_translation_complete:212 - 翻译完成，结果长度: 164
+2026-08-07 13:58:50.380 | INFO     | src.gui.main_window:closeEvent:352 - 全局热键已卸载
+2026-08-07 13:58:50.382 | INFO     | src.gui.main_window:closeEvent:376 - 程序已退出
+2026-08-07 13:58:55.213 | INFO     | __main__:main:208 - 正在启动全局翻译工具...
+2026-08-07 13:59:03.964 | INFO     | src.ocr.screen_ocr:__init__:21 - Tesseract初始化完成
+2026-08-07 13:59:04.111 | INFO     | src.gui.main_window:setup_hotkeys:322 - 全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)
+2026-08-07 13:59:04.345 | INFO     | __main__:finish_loading:259 - 程序启动完成
+2026-08-07 13:59:39.266 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=2
+2026-08-07 13:59:39.267 | INFO     | src.translator.engine:create_engine:297 - 正在创建翻译引擎: google
+2026-08-07 13:59:39.267 | INFO     | src.translator.engine:__init__:64 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:59:39.269 | DEBUG    | src.translator.engine:translate:73 - MyMemory 不支持 'auto'，已自动切换源语言为 'en'
+2026-08-07 13:59:41.111 | INFO     | src.translator.engine:translate:94 - MyMemory 翻译成功: hi... -> 嗨...
+2026-08-07 13:59:41.114 | INFO     | src.gui.main_window:on_translation_complete:212 - 翻译完成，结果长度: 1
+2026-08-07 13:59:51.094 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=Google翻译, 源语言=auto, 目标语言=zh, 文本长度=11
+2026-08-07 13:59:51.095 | INFO     | src.translator.engine:create_engine:297 - 正在创建翻译引擎: google
+2026-08-07 13:59:51.095 | INFO     | src.translator.engine:__init__:64 - MyMemory API 翻译引擎初始化成功
+2026-08-07 13:59:51.097 | DEBUG    | src.translator.engine:translate:73 - MyMemory 不支持 'auto'，已自动切换源语言为 'en'
+2026-08-07 13:59:52.105 | INFO     | src.translator.engine:translate:94 - MyMemory 翻译成功: how are you... -> 你好 , 我正在使用...
+2026-08-07 13:59:52.110 | INFO     | src.gui.main_window:on_translation_complete:212 - 翻译完成，结果长度: 10
+2026-08-07 14:00:15.365 | INFO     | src.gui.main_window:translate_text:159 - 手动翻译触发: 引擎=DeepSeek, 源语言=auto, 目标语言=en, 文本长度=4
+2026-08-07 14:00:15.366 | INFO     | src.translator.engine:create_engine:297 - 正在创建翻译引擎: deepseek
+2026-08-07 14:00:15.459 | INFO     | src.translator.engine:__init__:150 - DeepSeek 翻译引擎初始化成功
+2026-08-07 14:00:16.958 | INFO     | src.translator.engine:translate:175 - DeepSeek 翻译成功: 你在干嘛... -> What are you doing?...
+2026-08-07 14:00:16.959 | INFO     | src.gui.main_window:on_translation_complete:212 - 翻译完成，结果长度: 19
+2026-08-07 14:00:26.058 | INFO     | src.gui.main_window:closeEvent:352 - 全局热键已卸载
+2026-08-07 14:00:26.060 | INFO     | src.gui.main_window:closeEvent:376 - 程序已退出
