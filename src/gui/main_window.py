@@ -2,10 +2,10 @@ from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QComboBox, QTextEdit, QLabel,
     QSystemTrayIcon, QMenu, QApplication, QFileDialog,
-    QMessageBox
+    QMessageBox, QShortcut
 )
 from PySide6.QtCore import Qt, Signal, QThread, QTimer
-from PySide6.QtGui import QIcon, QAction, QClipboard, QImage
+from PySide6.QtGui import QIcon, QAction, QKeySequence, QImage
 
 from loguru import logger
 from ..translator.engine import TranslationEngineFactory
@@ -14,8 +14,12 @@ from ..capture.screenshot import ScreenCapture
 from ..capture.region_selector import RegionSelector
 from .overlay import TranslationOverlay
 from .settings import SettingsDialog
+from ..utils.config import Config
 
 import time
+import io
+from PySide6.QtCore import QBuffer, QIODevice
+from PIL import Image
 
 # 语言名称到代码的完整映射
 LANG_MAP = {
@@ -57,7 +61,6 @@ class TranslationWorker(QThread):
 class MainWindow(QMainWindow):
     """主窗口"""
 
-    # 提供线程安全的信号，用于从非 GUI 线程触发操作（例如全局热键回调）
     hotkey_pressed = Signal(str)
 
     def __init__(self):
@@ -65,8 +68,12 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("全局翻译工具")
         self.setGeometry(100, 100, 800, 600)
 
+        # 配置
+        self.config = Config.load()
+
         self.screen_capture = ScreenCapture()
-        self.ocr = ScreenOCR(engine='tesseract', lang='eng+chi_sim')
+        self.ocr = ScreenOCR(engine=self.config.get('ocr', {}).get('engine', 'tesseract'),
+                             lang=self.config.get('ocr', {}).get('language', 'eng+chi_sim'))
         self.overlay = TranslationOverlay()
 
         self.current_engine = None
@@ -78,21 +85,18 @@ class MainWindow(QMainWindow):
         self.setup_tray()
         self.setup_hotkeys()
 
-        # 连接热键信号到处理函数（保证在主线程执行）
         self.hotkey_pressed.connect(self._on_hotkey)
 
-        # 剪贴板自动检测（带节流）
+        # 剪贴板自动检测（仅在配置开启时连接）
         self._clipboard_last_ts = 0
         try:
             clipboard = QApplication.clipboard()
-            clipboard.dataChanged.connect(self._on_clipboard_data_changed)
+            if self.config.get('general', {}).get('clipboard_auto_detect', False):
+                clipboard.dataChanged.connect(self._on_clipboard_data_changed)
         except Exception as e:
             logger.debug(f"无法连接剪贴板 dataChanged 信号: {e}")
 
-        # 如需自动翻译，取消下面注释
-        # self.source_text.textChanged.connect(self.on_source_text_changed)
-
-    # ---------- UI 布局 ----------
+    # ---------- UI ----------
     def setup_ui(self):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
@@ -117,7 +121,6 @@ class MainWindow(QMainWindow):
 
         control_layout.addWidget(QLabel("翻译引擎:"))
         self.engine_combo = QComboBox()
-        # 新增 DeepSeek 选项
         self.engine_combo.addItems(['Google翻译', 'DeepL', '离线翻译', 'DeepSeek'])
         control_layout.addWidget(self.engine_combo)
 
@@ -134,7 +137,6 @@ class MainWindow(QMainWindow):
         self.doc_translate_btn.clicked.connect(self.start_document_translate)
         btn_layout.addWidget(self.doc_translate_btn)
 
-        # 新增：粘贴截图按钮，方便从剪贴板直接粘图
         self.paste_image_btn = QPushButton("📋 粘贴截图")
         self.paste_image_btn.clicked.connect(self.paste_image_from_clipboard)
         btn_layout.addWidget(self.paste_image_btn)
@@ -162,10 +164,8 @@ class MainWindow(QMainWindow):
         translate_btn.setFixedHeight(36)
         layout.addWidget(translate_btn)
 
-    # ---------- 核心功能 ----------
+    # ---------- 翻译流程 ----------
     def translate_text(self):
-        """执行翻译（手动触发）"""
-        # 1. 取消正在运行的翻译任务
         self._abort_current_worker()
 
         text = self.source_text.toPlainText().strip()
@@ -180,12 +180,10 @@ class MainWindow(QMainWindow):
         logger.info(f"手动翻译触发: 引擎={engine_type}, 源语言={source_lang}, 目标语言={target_lang}, 文本长度={len(text)}")
 
         try:
-            # 根据选中的引擎创建对应实例
             if engine_type == 'Google翻译':
                 engine = TranslationEngineFactory.create_engine('google')
             elif engine_type == 'DeepL':
-                # 从配置读取 API Key（示例：从环境变量或 config.json）
-                api_key = ""  # 应替换为实际读取逻辑
+                api_key = self.config.get('translation', {}).get('deepl_api_key', '')
                 if not api_key:
                     self.target_text.setText("⚠️ DeepL 需要 API Key，请在设置中配置")
                     logger.error("DeepL API Key 未配置")
@@ -194,7 +192,6 @@ class MainWindow(QMainWindow):
             elif engine_type == '离线翻译':
                 engine = TranslationEngineFactory.create_engine('offline')
             elif engine_type == 'DeepSeek':
-                # DeepSeek 引擎在 engine.py 中实现，会自动从环境变量读取密钥
                 engine = TranslationEngineFactory.create_engine('deepseek')
             else:
                 raise ValueError(f"未知引擎类型: {engine_type}")
@@ -204,11 +201,9 @@ class MainWindow(QMainWindow):
             self.target_text.setText(f"引擎初始化失败: {str(e)}")
             return
 
-        # 创建并启动新的工作线程
         self.worker = TranslationWorker(engine, text, source_lang, target_lang)
         self.worker.finished.connect(self.on_translation_complete)
         self.worker.error.connect(self.on_translation_error)
-        # 线程结束后自动清理（信号连接）
         self.worker.finished.connect(self._cleanup_worker)
         self.worker.error.connect(self._cleanup_worker)
         self.worker.start()
@@ -224,7 +219,6 @@ class MainWindow(QMainWindow):
             self.worker = None
 
     def _cleanup_worker(self):
-        """清理 Worker 引用（信号触发）"""
         if self.worker is not None:
             self.worker.deleteLater()
             self.worker = None
@@ -235,14 +229,13 @@ class MainWindow(QMainWindow):
         try:
             self.overlay.show_translation(result)
         except Exception:
-            # 悬浮窗不可见或已销毁也不要阻塞主流程
             pass
 
     def on_translation_error(self, error_msg):
         logger.error(f"翻译失败: {error_msg}")
         self.target_text.setText(f"❌ 翻译失败: {error_msg}")
 
-    # ---------- 辅助方法 ----------
+    # ---------- 帮助方法 ----------
     def get_lang_code(self, lang_name: str) -> str:
         return LANG_MAP.get(lang_name, 'auto')
 
@@ -252,7 +245,6 @@ class MainWindow(QMainWindow):
     # ---------- 屏幕翻译 ----------
     def start_screen_translate(self):
         logger.info("启动屏幕区域选择")
-        # 如果已有选择器，则先关闭
         if self.selector is not None:
             try:
                 self.selector.close()
@@ -265,20 +257,33 @@ class MainWindow(QMainWindow):
 
     def on_region_selected(self, rect):
         logger.info(f"屏幕区域已选: {rect.x()},{rect.y()} {rect.width()}x{rect.height()}")
-        # 保证坐标为整数并在有效区域
         x, y, w, h = int(rect.x()), int(rect.y()), int(rect.width()), int(rect.height())
         if w <= 0 or h <= 0:
             logger.error("选区尺寸非法")
             return
+
+        # 记录 monitor 信息与 region 参数
+        try:
+            monitors = getattr(self.screen_capture.sct, 'monitors', None)
+            logger.debug(f"当前 monitors: {monitors}")
+        except Exception as e:
+            logger.debug(f"获取 monitors 信息失败: {e}")
+
         try:
             image = self.screen_capture.capture_region(x, y, w, h)
         except Exception as e:
-            logger.error(f"截图失败: {e}")
+            try:
+                monitors = getattr(self.screen_capture.sct, 'monitors', None)
+                logger.error(f"截图失败: {e}. region=({x},{y},{w},{h}), monitors={monitors}")
+            except Exception:
+                logger.error(f"截图失败: {e}. region=({x},{y},{w},{h})")
             self.target_text.setText(f"截图失败: {e}")
             return
+
         if image is None:
-            logger.error("截图失败，返回 None")
+            logger.error("截图返回 None")
             return
+
         text = self.ocr.extract_text(image)
         if text:
             self.source_text.setText(text)
@@ -302,7 +307,6 @@ class MainWindow(QMainWindow):
             from ..document.docx_translator import translate_docx
             from ..document.pdf_translator import translate_pdf
 
-            # 使用当前引擎，若未初始化则使用 Google 作为默认
             engine = self.current_engine or TranslationEngineFactory.create_engine('google')
 
             if file_path.endswith('.docx'):
@@ -310,7 +314,6 @@ class MainWindow(QMainWindow):
             elif file_path.endswith('.pdf'):
                 translate_pdf(file_path, engine)
             else:
-                # 简单文本文件
                 with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()
                 target_lang = self.get_lang_code(self.target_lang_combo.currentText())
@@ -324,7 +327,7 @@ class MainWindow(QMainWindow):
             logger.error(f"文档翻译失败: {e}")
             self.target_text.setText(f"文档翻译失败: {e}")
 
-    # ---------- 剪贴板翻译 ----------
+    # ---------- 剪贴板 ----------
     def translate_clipboard(self):
         clipboard = QApplication.clipboard()
         text = clipboard.text()
@@ -336,11 +339,9 @@ class MainWindow(QMainWindow):
             logger.warning("剪贴板为空")
 
     def paste_image_from_clipboard(self):
-        """从剪贴板粘贴图像并进行 OCR/翻译"""
         clipboard = QApplication.clipboard()
         qimg = clipboard.image()
         if qimg is None or qimg.isNull():
-            # 有些平台需要从 mime 数据读取
             mime = clipboard.mimeData()
             if mime and mime.hasImage():
                 try:
@@ -352,12 +353,7 @@ class MainWindow(QMainWindow):
             logger.warning("剪贴板中没有图像可供粘贴")
             return
 
-        # 将 QImage 转为 PIL.Image
         try:
-            from PySide6.QtCore import QBuffer, QIODevice
-            import io
-            from PIL import Image
-
             buf = QBuffer()
             buf.open(QIODevice.ReadWrite)
             qimg.save(buf, "PNG")
@@ -376,13 +372,10 @@ class MainWindow(QMainWindow):
             self.target_text.setText("未识别到文本")
 
     def _on_clipboard_data_changed(self):
-        """剪贴板变化事件（节流后处理）"""
         now = time.time()
-        # 节流：2 秒内只处理一次
         if now - getattr(self, '_clipboard_last_ts', 0) < 2.0:
             return
         self._clipboard_last_ts = now
-        # 延迟短时间再处理，避免 clipboard 在短时间内被多次写入导致重复
         QTimer.singleShot(250, self._process_clipboard_if_image)
 
     def _process_clipboard_if_image(self):
@@ -396,15 +389,28 @@ class MainWindow(QMainWindow):
             mime = clipboard.mimeData()
             has_image = mime and mime.hasImage()
         if has_image:
-            # 自动粘贴图像并翻译（不改变剪贴板）
             self.paste_image_from_clipboard()
 
     # ---------- 设置 ----------
     def open_settings(self):
         dialog = SettingsDialog(self)
-        dialog.exec()
+        if dialog.exec() == 1:
+            # 重新加载配置并根据需要（重新注册热键/剪贴板）
+            self.config = Config.load()
+            self.setup_hotkeys()
+            # 重新连接剪贴板信号
+            try:
+                clipboard = QApplication.clipboard()
+                clipboard.dataChanged.disconnect()
+            except Exception:
+                pass
+            try:
+                if self.config.get('general', {}).get('clipboard_auto_detect', False):
+                    QApplication.clipboard().dataChanged.connect(self._on_clipboard_data_changed)
+            except Exception as e:
+                logger.debug(f"重新连接剪贴板失败: {e}")
 
-    # ---------- 托盘和热键 ----------
+    # ---------- 托盘与热键 ----------
     def setup_tray(self):
         self.tray = QSystemTrayIcon(self)
         self.tray.setIcon(QIcon())
@@ -419,35 +425,44 @@ class MainWindow(QMainWindow):
         self.tray.show()
 
     def setup_hotkeys(self):
-        try:
-            import keyboard
+        cfg = self.config.get('general', {})
+        register = bool(cfg.get('register_global_hotkeys', True))
+        registered = False
+        if register:
+            try:
+                import keyboard
+                keyboard.add_hotkey(self.config.get('hotkeys', {}).get('screen_translate', 'ctrl+shift+x'),
+                                    lambda: self.hotkey_pressed.emit('screen_translate'))
+                keyboard.add_hotkey(self.config.get('hotkeys', {}).get('clipboard_translate', 'ctrl+shift+t'),
+                                    lambda: self.hotkey_pressed.emit('clipboard_translate'))
+                registered = True
+                logger.info("全局热键注册成功")
+            except Exception as e:
+                logger.error(f"全局热键注册失败: {e}")
 
-            # 使用线程安全的信号来触发主线程中的行为，避免在 keyboard 的回调线程中直接操作 Qt 对象
-            keyboard.add_hotkey('ctrl+shift+x', lambda: self.hotkey_pressed.emit('screen_translate'))
-            keyboard.add_hotkey('ctrl+shift+t', lambda: self.hotkey_pressed.emit('clipboard_translate'))
-            logger.info("全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)")
-        except Exception as e:
-            logger.error(f"全局热键注册失败: {e}")
+        if not registered:
+            try:
+                qs1 = QShortcut(QKeySequence("Ctrl+Shift+X"), self)
+                qs1.activated.connect(self.start_screen_translate)
+                qs2 = QShortcut(QKeySequence("Ctrl+Shift+T"), self)
+                qs2.activated.connect(self.translate_clipboard)
+                logger.info("使用程序内快捷键作为全局热键的回退方案（窗口需有焦点）")
+                if self.tray is not None:
+                    self.tray.showMessage("热键回退", "全局热键注册失败，已启用程序内快捷键（窗口需有焦点）。\n"
+                                              "可在设置中关闭全局热键或提高权限以恢复全局热键。")
+            except Exception as e:
+                logger.error(f"安装程序内快捷键回退失败: {e}")
+                if self.tray is not None:
+                    self.tray.showMessage("热键问题", "热键注册失败且程序内快捷键无法启用，请检查权限或在设置中禁用全局热键。")
 
     def _on_hotkey(self, name: str):
-        """主线程中处理热键触发的操作"""
         if name == 'screen_translate':
             self.start_screen_translate()
         elif name == 'clipboard_translate':
             self.translate_clipboard()
 
-    # ---------- 可选：自动翻译（延时触发） ----------
-    def on_source_text_changed(self):
-        if not hasattr(self, '_auto_translate_timer'):
-            self._auto_translate_timer = QTimer()
-            self._auto_translate_timer.setSingleShot(True)
-            self._auto_translate_timer.timeout.connect(self.translate_text)
-        self._auto_translate_timer.stop()
-        self._auto_translate_timer.start(500)
-
     # ---------- 关闭事件 ----------
     def closeEvent(self, event):
-        """重写关闭事件：询问用户是否退出，确认后清理资源并退出进程。"""
         reply = QMessageBox.question(
             self, '确认退出',
             '确定要退出程序吗？',
@@ -458,7 +473,6 @@ class MainWindow(QMainWindow):
             event.ignore()
             return
 
-        # 1. 卸载全局热键（释放键盘钩子）
         try:
             import keyboard
             keyboard.unhook_all()
@@ -466,20 +480,16 @@ class MainWindow(QMainWindow):
         except Exception as e:
             logger.debug(f"卸载热键时出现异常（可忽略）: {e}")
 
-        # 2. 强制终止 Worker（安全退出）
         self._abort_current_worker()
 
-        # 3. 关闭悬浮窗
         if self.overlay is not None:
             self.overlay.close()
             self.overlay.deleteLater()
 
-        # 4. 隐藏并删除系统托盘图标
         if self.tray is not None:
             self.tray.hide()
             self.tray.deleteLater()
 
-        # 5. 关闭区域选择器
         if self.selector is not None:
             self.selector.close()
             self.selector.deleteLater()
