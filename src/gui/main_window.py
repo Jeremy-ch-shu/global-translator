@@ -2,10 +2,19 @@ from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QComboBox, QTextEdit, QLabel,
     QSystemTrayIcon, QMenu, QApplication, QFileDialog,
-    QMessageBox, QShortcut
+    QMessageBox
 )
 from PySide6.QtCore import Qt, Signal, QThread, QTimer
 from PySide6.QtGui import QIcon, QAction, QKeySequence, QImage
+
+# QShortcut 在不同 PySide6 版本中可能放在不同模块，尝试安全导入
+try:
+    from PySide6.QtWidgets import QShortcut
+except Exception:
+    try:
+        from PySide6.QtGui import QShortcut
+    except Exception:
+        QShortcut = None
 
 from loguru import logger
 from ..translator.engine import TranslationEngineFactory
@@ -442,14 +451,19 @@ class MainWindow(QMainWindow):
 
         if not registered:
             try:
-                qs1 = QShortcut(QKeySequence("Ctrl+Shift+X"), self)
-                qs1.activated.connect(self.start_screen_translate)
-                qs2 = QShortcut(QKeySequence("Ctrl+Shift+T"), self)
-                qs2.activated.connect(self.translate_clipboard)
-                logger.info("使用程序内快捷键作为全局热键的回退方案（窗口需有焦点）")
-                if self.tray is not None:
-                    self.tray.showMessage("热键回退", "全局热键注册失败，已启用程序内快捷键（窗口需有焦点）。\n"
-                                              "可在设置中关闭全局热键或提高权限以恢复全局热键。")
+                if QShortcut is not None:
+                    qs1 = QShortcut(QKeySequence("Ctrl+Shift+X"), self)
+                    qs1.activated.connect(self.start_screen_translate)
+                    qs2 = QShortcut(QKeySequence("Ctrl+Shift+T"), self)
+                    qs2.activated.connect(self.translate_clipboard)
+                    logger.info("使用程序内快捷键作为全局热键的回退方案（窗口需有焦点）")
+                    if self.tray is not None:
+                        self.tray.showMessage("热键回退", "全局热键注册失败，已启用程序内快捷键（窗口需有焦点）。\n"
+                                                  "可在设置中关闭全局热键或提高权限以恢复全局热键。")
+                else:
+                    logger.error("QShortcut 在此环境中不可用，无法安装程序内快捷键回退")
+                    if self.tray is not None:
+                        self.tray.showMessage("热键问题", "全局热键注册失败且程序内快捷键不可用，请在设置中禁用全局热键或检查环境。")
             except Exception as e:
                 logger.error(f"安装程序内快捷键回退失败: {e}")
                 if self.tray is not None:
