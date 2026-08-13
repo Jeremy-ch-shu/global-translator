@@ -5,7 +5,7 @@ from PySide6.QtWidgets import (
     QMessageBox
 )
 from PySide6.QtCore import Qt, Signal, QThread, QTimer
-from PySide6.QtGui import QIcon, QAction
+from PySide6.QtGui import QIcon, QAction, QClipboard, QImage
 
 from loguru import logger
 from ..translator.engine import TranslationEngineFactory
@@ -55,6 +55,9 @@ class TranslationWorker(QThread):
 class MainWindow(QMainWindow):
     """主窗口"""
 
+    # 提供线程安全的信号，用于从非 GUI 线程触发操作（例如全局热键回调）
+    hotkey_pressed = Signal(str)
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("全局翻译工具")
@@ -72,6 +75,9 @@ class MainWindow(QMainWindow):
         self.setup_ui()
         self.setup_tray()
         self.setup_hotkeys()
+
+        # 连接热键信号到处理函数（保证在主线程执行）
+        self.hotkey_pressed.connect(self._on_hotkey)
 
         # 如需自动翻译，取消下面注释
         # self.source_text.textChanged.connect(self.on_source_text_changed)
@@ -117,6 +123,11 @@ class MainWindow(QMainWindow):
         self.doc_translate_btn = QPushButton("📄 文档翻译")
         self.doc_translate_btn.clicked.connect(self.start_document_translate)
         btn_layout.addWidget(self.doc_translate_btn)
+
+        # 新增：粘贴截图按钮，方便从剪贴板直接粘图
+        self.paste_image_btn = QPushButton("📋 粘贴截图")
+        self.paste_image_btn.clicked.connect(self.paste_image_from_clipboard)
+        btn_layout.addWidget(self.paste_image_btn)
 
         self.settings_btn = QPushButton("⚙️ 设置")
         self.settings_btn.clicked.connect(self.open_settings)
@@ -211,7 +222,11 @@ class MainWindow(QMainWindow):
     def on_translation_complete(self, result):
         logger.info(f"翻译完成，结果长度: {len(result)}")
         self.target_text.setText(result)
-        self.overlay.show_translation(result)
+        try:
+            self.overlay.show_translation(result)
+        except Exception:
+            # 悬浮窗不可见或已销毁也不要阻塞主流程
+            pass
 
     def on_translation_error(self, error_msg):
         logger.error(f"翻译失败: {error_msg}")
@@ -227,17 +242,32 @@ class MainWindow(QMainWindow):
     # ---------- 屏幕翻译 ----------
     def start_screen_translate(self):
         logger.info("启动屏幕区域选择")
+        # 如果已有选择器，则先关闭
+        if self.selector is not None:
+            try:
+                self.selector.close()
+                self.selector.deleteLater()
+            except Exception:
+                pass
         self.selector = RegionSelector()
         self.selector.region_selected.connect(self.on_region_selected)
         self.selector.showFullScreen()
 
     def on_region_selected(self, rect):
         logger.info(f"屏幕区域已选: {rect.x()},{rect.y()} {rect.width()}x{rect.height()}")
-        image = self.screen_capture.capture_region(
-            rect.x(), rect.y(), rect.width(), rect.height()
-        )
+        # 保证坐标为整数并在有效区域
+        x, y, w, h = int(rect.x()), int(rect.y()), int(rect.width()), int(rect.height())
+        if w <= 0 or h <= 0:
+            logger.error("选区尺寸非法")
+            return
+        try:
+            image = self.screen_capture.capture_region(x, y, w, h)
+        except Exception as e:
+            logger.error(f"截图失败: {e}")
+            self.target_text.setText(f"截图失败: {e}")
+            return
         if image is None:
-            logger.error("截图失败")
+            logger.error("截图失败，返回 None")
             return
         text = self.ocr.extract_text(image)
         if text:
@@ -295,6 +325,43 @@ class MainWindow(QMainWindow):
         else:
             logger.warning("剪贴板为空")
 
+    def paste_image_from_clipboard(self):
+        """从剪贴板粘贴图像并进行 OCR/翻译"""
+        clipboard = QApplication.clipboard()
+        qimg = clipboard.image()
+        if qimg is None or qimg.isNull():
+            # 有些平台需要从 mime 数据读取
+            mime = clipboard.mimeData()
+            if mime and mime.hasImage():
+                qimg = QImage(mime.imageData())
+        if qimg is None or qimg.isNull():
+            self.target_text.setText("剪贴板中没有图像")
+            logger.warning("剪贴板中没有图像可供粘贴")
+            return
+
+        # 将 QImage 转为 PIL.Image
+        try:
+            from PySide6.QtCore import QBuffer, QIODevice
+            import io
+            from PIL import Image
+
+            buf = QBuffer()
+            buf.open(QIODevice.ReadWrite)
+            qimg.save(buf, "PNG")
+            bytearr = buf.data()
+            pil_img = Image.open(io.BytesIO(bytearr))
+        except Exception as e:
+            logger.error(f"将剪贴板图像转换为 PIL 失败: {e}")
+            self.target_text.setText(f"处理剪贴板图像失败: {e}")
+            return
+
+        text = self.ocr.extract_text(pil_img)
+        if text:
+            self.source_text.setText(text)
+            self.translate_text()
+        else:
+            self.target_text.setText("未识别到文本")
+
     # ---------- 设置 ----------
     def open_settings(self):
         dialog = SettingsDialog(self)
@@ -317,11 +384,20 @@ class MainWindow(QMainWindow):
     def setup_hotkeys(self):
         try:
             import keyboard
-            keyboard.add_hotkey('ctrl+shift+x', self.start_screen_translate)
-            keyboard.add_hotkey('ctrl+shift+t', self.translate_clipboard)
+
+            # 使用线程安全的信号来触发主线程中的行为，避免在 keyboard 的回调线程中直接操作 Qt 对象
+            keyboard.add_hotkey('ctrl+shift+x', lambda: self.hotkey_pressed.emit('screen_translate'))
+            keyboard.add_hotkey('ctrl+shift+t', lambda: self.hotkey_pressed.emit('clipboard_translate'))
             logger.info("全局热键注册成功: Ctrl+Shift+X (屏幕翻译), Ctrl+Shift+T (剪贴板翻译)")
         except Exception as e:
             logger.error(f"全局热键注册失败: {e}")
+
+    def _on_hotkey(self, name: str):
+        """主线程中处理热键触发的操作"""
+        if name == 'screen_translate':
+            self.start_screen_translate()
+        elif name == 'clipboard_translate':
+            self.translate_clipboard()
 
     # ---------- 可选：自动翻译（延时触发） ----------
     def on_source_text_changed(self):
