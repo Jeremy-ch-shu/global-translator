@@ -15,6 +15,8 @@ from ..capture.region_selector import RegionSelector
 from .overlay import TranslationOverlay
 from .settings import SettingsDialog
 
+import time
+
 # 语言名称到代码的完整映射
 LANG_MAP = {
     '自动检测': 'auto',
@@ -78,6 +80,14 @@ class MainWindow(QMainWindow):
 
         # 连接热键信号到处理函数（保证在主线程执行）
         self.hotkey_pressed.connect(self._on_hotkey)
+
+        # 剪贴板自动检测（带节流）
+        self._clipboard_last_ts = 0
+        try:
+            clipboard = QApplication.clipboard()
+            clipboard.dataChanged.connect(self._on_clipboard_data_changed)
+        except Exception as e:
+            logger.debug(f"无法连接剪贴板 dataChanged 信号: {e}")
 
         # 如需自动翻译，取消下面注释
         # self.source_text.textChanged.connect(self.on_source_text_changed)
@@ -333,7 +343,10 @@ class MainWindow(QMainWindow):
             # 有些平台需要从 mime 数据读取
             mime = clipboard.mimeData()
             if mime and mime.hasImage():
-                qimg = QImage(mime.imageData())
+                try:
+                    qimg = QImage(mime.imageData())
+                except Exception:
+                    qimg = None
         if qimg is None or qimg.isNull():
             self.target_text.setText("剪贴板中没有图像")
             logger.warning("剪贴板中没有图像可供粘贴")
@@ -361,6 +374,30 @@ class MainWindow(QMainWindow):
             self.translate_text()
         else:
             self.target_text.setText("未识别到文本")
+
+    def _on_clipboard_data_changed(self):
+        """剪贴板变化事件（节流后处理）"""
+        now = time.time()
+        # 节流：2 秒内只处理一次
+        if now - getattr(self, '_clipboard_last_ts', 0) < 2.0:
+            return
+        self._clipboard_last_ts = now
+        # 延迟短时间再处理，避免 clipboard 在短时间内被多次写入导致重复
+        QTimer.singleShot(250, self._process_clipboard_if_image)
+
+    def _process_clipboard_if_image(self):
+        clipboard = QApplication.clipboard()
+        try:
+            qimg = clipboard.image()
+            has_image = not (qimg is None or qimg.isNull())
+        except Exception:
+            has_image = False
+        if not has_image:
+            mime = clipboard.mimeData()
+            has_image = mime and mime.hasImage()
+        if has_image:
+            # 自动粘贴图像并翻译（不改变剪贴板）
+            self.paste_image_from_clipboard()
 
     # ---------- 设置 ----------
     def open_settings(self):
